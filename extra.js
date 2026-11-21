@@ -14,6 +14,7 @@ css.textContent=[
 '#tl .tlin b{position:absolute;top:-4px;left:50%;transform:translateX(-50%);padding:2px 7px;border-radius:10px;background:#1a0f0a;color:#ffd84a;font:500 11px "DM Mono",monospace;white-space:nowrap}'
 ].join('');
 document.head.appendChild(css);
+if(!document.querySelector('link[rel*=icon]')){var fv=document.createElement('link');fv.rel='icon';fv.type='image/svg+xml';fv.href='data:image/svg+xml,'+encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="12" fill="#0B2540"/><rect x="8" y="22" width="48" height="22" rx="4" fill="#f7f3e6" stroke="#ffd84a" stroke-width="3"/><rect x="8" y="22" width="48" height="7" rx="3" fill="#155FA8"/></svg>');document.head.appendChild(fv)}
 var sv=document.createElement('div');sv.innerHTML='<svg width="0" height="0" style="position:absolute" aria-hidden="true"><filter id="pincel" x="-5%" y="-10%" width="110%" height="120%"><feTurbulence type="fractalNoise" baseFrequency=".025 .1" numOctaves="2" seed="4" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="3"/></filter></svg>';document.body.appendChild(sv.firstChild);
 var tl=document.getElementById('tl');if(!tl)return;
 if(getComputedStyle(tl).position==='static')tl.style.position='relative';
@@ -30,9 +31,11 @@ function frame(now){
   lab.textContent=Math.round(1800+x/W*220);
   var ds=tl.querySelectorAll('.dot');
   for(var i=0;i<ds.length;i++){var d=ds[i];var dx=Math.abs(d.offsetLeft+d.offsetWidth/2-x);var n=Math.max(0,1-dx/70);d.style.setProperty('--n',n.toFixed(3))}
-  requestAnimationFrame(frame)
+  if(vis&&!red)requestAnimationFrame(frame)
 }
-requestAnimationFrame(frame);
+var vis=true,red=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+if('IntersectionObserver' in window){new IntersectionObserver(function(en){var v=en[0].isIntersecting;if(v&&!vis&&!red){vis=true;requestAnimationFrame(frame)}else vis=v}).observe(tl)}
+if(red){x=tl.scrollWidth*.5;frame(0)}else requestAnimationFrame(frame);
 })();
 
 (function(){
