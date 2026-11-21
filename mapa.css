@@ -50,3 +50,30 @@
 .btn.chapa:hover{transform:translateY(-2px);border-color:#141414;background:linear-gradient(180deg,#fff,#f7f5ec 60%,#ebe8db);box-shadow:inset 0 0 0 2px #fff,inset 0 0 0 3.5px #b9b6a8,0 6px 0 #8f8c80,0 16px 22px -8px rgba(0,0,0,.65)}
 .btn.chapa:active{transform:translateY(3px);box-shadow:inset 0 0 0 2px #fff,inset 0 0 0 3.5px #b9b6a8,0 1px 0 #8f8c80,0 4px 8px -4px rgba(0,0,0,.6)}
 .btn.chapa .ico{margin-right:8px}
+
+/*ficha*/
+.panel{--pp:#f3e9d2;--pl:rgba(120,95,50,.16);--pk:#2b2112;--pm:#7a6a4c;background-color:var(--pp)!important;background-image:linear-gradient(90deg,transparent 22px,rgba(200,70,60,.35) 22px,rgba(200,70,60,.35) 23.5px,transparent 23.5px),repeating-linear-gradient(180deg,transparent 0,transparent 31px,var(--pl) 31px,var(--pl) 32px)!important;background-attachment:local!important;color:var(--pk)!important;border-radius:4px 0 0 4px!important;padding-left:44px!important;box-shadow:-18px 0 50px -12px rgba(0,0,0,.55),inset 6px 0 14px -10px rgba(0,0,0,.35)!important;border-left:1px solid rgba(0,0,0,.18)}
+[data-theme="dark"] .panel{--pp:#16253b;--pl:rgba(150,180,220,.1);--pk:#e9e2cf;--pm:#9fb0c6;background-image:linear-gradient(90deg,transparent 22px,rgba(220,110,90,.4) 22px,rgba(220,110,90,.4) 23.5px,transparent 23.5px),repeating-linear-gradient(180deg,transparent 0,transparent 31px,var(--pl) 31px,var(--pl) 32px)!important}
+.panel .top{margin-bottom:14px}
+.panel .era{font-family:var(--mono);text-transform:uppercase;letter-spacing:.22em;font-size:11px;color:var(--pm)!important;border:1.5px solid currentColor;padding:3px 9px;transform:rotate(-2deg);display:inline-block;border-radius:3px}
+.panel #close{border-radius:50%!important;width:36px;height:36px;padding:0!important;font-size:0!important;border:1.5px solid var(--pk)!important;background:transparent!important;position:relative}
+.panel #close::before{content:"×";font-size:22px;line-height:32px;color:var(--pk);display:block;text-align:center}
+.panel .tag{border:1px dashed var(--pm)!important;background:transparent!important;color:var(--pk)!important;border-radius:2px!important;font-family:var(--mono);text-transform:uppercase;letter-spacing:.12em;font-size:10.5px}
+.panel #p-name{color:var(--pk)!important;font-size:clamp(44px,12vw,64px)!important;line-height:.95;margin-top:10px;text-shadow:1px 1px 0 rgba(0,0,0,.08)}
+.panel #p-yrs{color:var(--pm)!important;letter-spacing:.2em}
+.panel #p-bio{color:var(--pk)!important;font-size:17px;line-height:32px!important;margin-top:20px!important}
+.panel h4{font-family:var(--mono);text-transform:uppercase;letter-spacing:.24em;font-size:11px;color:var(--pm)!important;margin:30px 0 6px!important;display:flex;align-items:center;gap:10px}
+.panel h4::after{content:"";flex:1;border-top:1.5px solid var(--pm);opacity:.5}
+.panel #p-works{list-style:none;padding:0;margin:0}
+.panel #p-works li{border:0!important;padding:8px 0!important}
+.panel #p-works .w{display:flex;align-items:baseline;gap:8px}
+.panel #p-works .w em{font-family:var(--serif,Georgia,serif);font-size:19px;color:var(--pk)}
+.panel #p-works .w::after{content:"";order:1;flex:1;border-bottom:2px dotted var(--pm);opacity:.55;transform:translateY(-4px)}
+.panel #p-works .w span{order:2;font-family:var(--mono);color:var(--pm)!important}
+.panel .eds{display:flex;flex-wrap:wrap;gap:4px 18px;margin-top:2px}
+.panel a.ed{border:0!important;background:transparent!important;padding:0!important;border-radius:0!important;font-family:var(--mono);font-size:12.5px;color:#9b3d2a!important;text-decoration:underline;text-decoration-thickness:1.5px;text-underline-offset:4px}
+[data-theme="dark"] .panel a.ed{color:#f0a78f!important}
+.panel .start{background:transparent!important;border:0!important;border-left:4px solid #9b3d2a!important;border-radius:0!important;font-style:italic;font-size:18px;line-height:32px;padding:2px 0 2px 16px!important;color:var(--pk)!important}
+.panel .px{background:transparent!important;border:0!important;border-top:1.5px dashed var(--pm)!important;border-radius:0!important;padding:14px 0 6px!important}
+.panel .px b{color:var(--pk)!important;font-family:var(--serif,Georgia,serif);font-size:17px}
+.panel .px span{color:var(--pk)!important;opacity:.85;line-height:28px}
