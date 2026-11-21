@@ -7,15 +7,16 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Hanken+Grotesk:wght@400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
-<link rel="stylesheet" href="diseno.css">
-<link rel="stylesheet" href="mapa.css">
+<link rel="stylesheet" href="styles.css?v=3">
+<link rel="stylesheet" href="diseno.css?v=3">
+<link rel="stylesheet" href="mapa.css?v=3">
 <style>
 .rio{-webkit-mask-image:linear-gradient(90deg,transparent,#000 14%,#000 86%,transparent),linear-gradient(180deg,transparent,#000 22%);-webkit-mask-composite:source-in;mask-image:linear-gradient(90deg,transparent,#000 14%,#000 86%,transparent),linear-gradient(180deg,transparent,#000 22%);mask-composite:intersect}
 .btn{display:inline-flex;align-items:center;gap:9px;text-decoration:none}
 .ico{width:20px;height:20px;flex:none;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;transition:transform .25s}
 .btn:hover .ico{transform:rotate(-8deg) scale(1.12)}
-.apoyo{position:fixed;inset:0;display:none;place-items:center;padding:20px;background:rgba(5,12,24,.6);z-index:40}
+.veil{z-index:60!important}.panel{z-index:61!important}
+.apoyo{position:fixed;inset:0;display:none;place-items:center;padding:20px;background:rgba(5,12,24,.6);z-index:70}
 .apoyo.open{display:grid}
 .apoyo .box{width:min(440px,100%);background:var(--card);color:var(--ink);border:1px solid var(--line);border-radius:20px;padding:28px 26px;box-shadow:0 30px 60px -20px rgba(0,0,0,.5)}
 .apoyo h2{font-family:var(--display);font-weight:400;font-size:34px;margin:0 0 6px}
@@ -44,7 +45,7 @@
       <a class="btn ghost chapa" data-pais="URUGUAY" href="#autores"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l1-4L16.5 4.5a2 2 0 0 1 3 3L8 19l-4 1Z"/><path d="M14.5 6.5l3 3"/></svg>Ver autores</a>
       <a class="btn ghost chapa" data-pais="ARGENTINA" href="#cruces"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 17h18l-2.5 3.5h-13Z"/><path d="M12 3v13"/><path d="M12 4c4 3 5.5 7 5.5 11H12Z"/><path d="M11 7c-3 2.5-4.5 5.5-4.5 8H11Z"/></svg>Ver cruces</a>
     </div>
-    <img class="rio" src="hero-rio.svg" alt="Ilustración: Montevideo y Buenos Aires a cada lado del río, con libros abiertos que cruzan volando bajo la luna" width="1600" height="460">
+    <img class="rio" src="hero-rio.svg?v=3" alt="Ilustración: Montevideo y Buenos Aires a cada lado del río, con un puerto viejo y libros abiertos que cruzan volando bajo la luna" width="1600" height="460">
 
     <div class="tl-wrap">
     <div class="tl-head"><h2>Línea de tiempo</h2>
@@ -113,9 +114,9 @@
   </div>
 </div>
 
-<script src="app.js"></script>
-<script src="voces.js"></script>
-<script src="mapa.js"></script>
+<script src="app.js?v=3"></script>
+<script src="voces.js?v=3"></script>
+<script src="mapa.js?v=3"></script>
 <script>
 (function(){
   var im=document.getElementById('mesaImg');
