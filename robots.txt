@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://orilladeletras.github.io/orilla-de-letras/sitemap.xml
