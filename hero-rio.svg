@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 460" role="img" aria-label="Acuarela de dos orillas separadas por un río, con libros abiertos que cruzan de una costa a la otra bajo la luna">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 460" role="img" aria-label="Acuarela de dos orillas separadas por un río, con un puerto viejo, libros abiertos que cruzan de una costa a la otra bajo la luna">
 <defs>
 <filter id="t" x="-5%" y="-5%" width="110%" height="110%"><feTurbulence type="fractalNoise" baseFrequency=".018 .03" numOctaves="3" seed="4" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="9"/></filter>
 <filter id="f" x="-5%" y="-5%" width="110%" height="110%"><feTurbulence type="fractalNoise" baseFrequency=".05" numOctaves="2" seed="9" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="4"/><feGaussianBlur stdDeviation=".5"/></filter>
@@ -47,13 +47,11 @@
 <g filter="url(#b)"><ellipse cx="320" cy="400" rx="380" ry="40" fill="#0D2D4D" opacity=".6"/><ellipse cx="1280" cy="410" rx="400" ry="45" fill="#0D2D4D" opacity=".6"/><ellipse cx="800" cy="360" rx="520" ry="22" fill="#4B80AA" opacity=".3"/></g>
 <g filter="url(#t)" fill="none" stroke-linecap="round">
 <path d="M1121 395q70 -2 140 -1" stroke="#244F7B" stroke-width="3" opacity=".2"/>
-<path d="M256 414q78 1 157 -2" stroke="#244F7B" stroke-width="3" opacity=".1"/>
 <path d="M738 412q141 -3 281 0" stroke="#8FB7D6" stroke-width="6" opacity=".3"/>
 <path d="M1020 425q103 -1 206 -1" stroke="#3F76A5" stroke-width="4" opacity=".2"/>
 <path d="M296 394q70 2 140 0" stroke="#6C9CC4" stroke-width="3" opacity=".2"/>
 <path d="M842 439q72 0 145 0" stroke="#8FB7D6" stroke-width="3" opacity=".3"/>
 <path d="M887 354q114 -2 227 2" stroke="#6C9CC4" stroke-width="4" opacity=".2"/>
-<path d="M1176 369q74 -2 147 0" stroke="#0F3253" stroke-width="3" opacity=".1"/>
 <path d="M1539 345q143 -1 285 1" stroke="#0F3253" stroke-width="6" opacity=".1"/>
 <path d="M505 375q46 0 92 -1" stroke="#0F3253" stroke-width="6" opacity=".1"/>
 <path d="M200 409q145 -2 290 -1" stroke="#8FB7D6" stroke-width="7" opacity=".3"/>
@@ -62,24 +60,15 @@
 <path d="M950 360q82 1 164 1" stroke="#244F7B" stroke-width="4" opacity=".2"/>
 <path d="M837 440q109 2 218 2" stroke="#0F3253" stroke-width="6" opacity=".2"/>
 <path d="M838 370q98 -2 195 1" stroke="#0F3253" stroke-width="5" opacity=".3"/>
-<path d="M244 325q83 2 166 0" stroke="#244F7B" stroke-width="4" opacity=".2"/>
 <path d="M19 328q138 -1 276 -1" stroke="#6C9CC4" stroke-width="7" opacity=".2"/>
-<path d="M292 436q133 -2 266 1" stroke="#3F76A5" stroke-width="4" opacity=".2"/>
 <path d="M1369 344q149 0 299 -1" stroke="#0F3253" stroke-width="8" opacity=".3"/>
-<path d="M457 407q128 2 256 1" stroke="#6C9CC4" stroke-width="3" opacity=".2"/>
 <path d="M767 416q65 -1 131 1" stroke="#6C9CC4" stroke-width="7" opacity=".2"/>
-<path d="M448 352q141 -1 282 1" stroke="#0F3253" stroke-width="3" opacity=".3"/>
 <path d="M979 430q148 -2 296 1" stroke="#8FB7D6" stroke-width="3" opacity=".2"/>
 <path d="M670 353q123 -1 246 0" stroke="#0F3253" stroke-width="7" opacity=".2"/>
-<path d="M987 345q100 1 199 -2" stroke="#0F3253" stroke-width="5" opacity=".2"/>
 <path d="M1552 398q118 1 237 2" stroke="#8FB7D6" stroke-width="6" opacity=".3"/>
 <path d="M1249 425q88 -2 175 0" stroke="#244F7B" stroke-width="4" opacity=".2"/>
 <path d="M1215 371q61 -2 122 0" stroke="#244F7B" stroke-width="5" opacity=".3"/>
 <path d="M1114 361q136 -3 273 -1" stroke="#3F76A5" stroke-width="7" opacity=".2"/>
-<path d="M1291 395q146 -1 293 -2" stroke="#6C9CC4" stroke-width="2" opacity=".2"/>
-<path d="M600 349q49 2 98 -1" stroke="#0F3253" stroke-width="6" opacity=".2"/>
-<path d="M1523 369q48 -1 96 -1" stroke="#0F3253" stroke-width="3" opacity=".2"/>
-<path d="M1405 441q44 2 89 -1" stroke="#3F76A5" stroke-width="4" opacity=".2"/>
 </g>
 <g filter="url(#t)" fill="none" stroke-linecap="round" stroke="#F6E3AE">
 <path d="M741 326q60 -1 120 0" stroke-width="4" opacity=".6"/>
@@ -95,14 +84,19 @@
 <path d="M765 408q32 -1 65 0" stroke-width="6" opacity=".2"/>
 <path d="M774 416q30 2 60 0" stroke-width="5" opacity=".2"/>
 <path d="M772 424q27 1 54 0" stroke-width="5" opacity=".2"/>
-<path d="M780 433q24 2 48 0" stroke-width="3" opacity=".1"/>
 </g>
-<g filter="url(#t)" fill="none" stroke-linecap="round" stroke-width="2.6">
-<path d="M344 330h25M318 340h20M327 350h19" stroke="#BFE0F5" opacity=".4"/>
-<path d="M1117 330h10M1095 340h13M1117 350h26M1098 360h14" stroke="#F5CE7E" opacity=".35"/>
-<path d="M1189 330h15M1184 340h22M1201 350h13M1187 360h19" stroke="#F5CE7E" opacity=".35"/>
-<path d="M1366 330h20M1371 340h22M1359 350h11M1357 360h25" stroke="#F5CE7E" opacity=".35"/>
+<g filter="url(#t)" opacity=".95">
+<g fill="#0A1C32"><path d="M845 318V298h6v-8h14v8h8v-12h6V298h58V318Z"/><path d="M866 286v-12h8v12Z"/><path d="M930 318v-14h40v14Z"/></g>
+<g stroke="#0A1C32" stroke-width="3" fill="none" stroke-linecap="round"><path d="M70 318V232M70 232H150M150 232V250M70 240L112 232M118 318V262M118 262H205M205 262V280"/><path d="M1565 318V250M1565 250H1500M1500 250V268"/></g>
+<path d="M0 318h250v8H0Z" fill="#0A1C32" opacity=".8"/>
 </g>
+<g filter="url(#t)" fill="#08182B" opacity=".92">
+<path d="M-10 392H300V408H-10Z"/><path d="M20 408h8v52h-8zM70 408h8v52h-8zM120 408h8v52h-8zM170 408h8v52h-8zM220 408h8v52h-8zM270 408h8v52h-8z"/>
+<path d="M60 392V364l24-14 24 14V392Z"/><path d="M150 392V372h50V392Z"/><path d="M232 392c0-16 14-22 28-22s28 6 28 22Z"/>
+<path d="M0 375l6 0 0 17h-6z"/>
+</g>
+<g filter="url(#f)" fill="#F5CE7E" opacity=".75"><circle cx="84" cy="372" r="3"/><circle cx="175" cy="382" r="2.5"/><circle cx="260" cy="383" r="2.5"/></g>
+<g filter="url(#t)"><path d="M1300 420L1560 420 1540 446 1330 446Z" fill="#08182B" opacity=".92"/><path d="M1350 420V384h50v36Z M1410 420V372h26V420Z" fill="#08182B" opacity=".92"/><path d="M1415 372V350h10v22Z" fill="#B54A3A" opacity=".85"/><path d="M1340 384h60M1340 394h60" stroke="#F5CE7E" stroke-width="2" opacity=".5"/><path d="M1470 420V360M1470 366l40 54" stroke="#08182B" stroke-width="3"/></g>
 <g filter="url(#t)" transform="translate(556 354)"><path d="M0 2L74 0 60 15 14 16Z" fill="#0A1C32" opacity=".92"/><path d="M36-2L35-64" stroke="#0A1C32" stroke-width="2.6" stroke-linecap="round"/><path d="M38-62C64-40 66-20 62-4L38-4Z" fill="#F4E8C8" opacity=".92"/><path d="M33-54C14-36 10-18 13-4H33Z" fill="#E6D2A0" opacity=".85"/><path d="M-6 20q40 6 90 0" stroke="#8FB7D6" stroke-width="3" fill="none" opacity=".4"/></g>
 <g filter="url(#t)">
 <use href="#k" transform="translate(215 72) rotate(-8)" opacity=".9"/>
