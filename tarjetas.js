@@ -69,3 +69,4 @@
   +'@media print{body::before{display:none}}';
   document.head.appendChild(s);
 })();
+/*cta-movil*/(function(){var s=document.createElement('style');s.textContent='@media (max-width:719px){.hero-cta{display:grid;grid-template-columns:1fr 1fr;gap:12px}.hero-cta .btn:first-child{grid-column:1/-1;justify-content:center}.hero-cta .btn.ficha{justify-content:center;padding-inline:12px}}';document.head.appendChild(s)})();
