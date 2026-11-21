@@ -55,7 +55,7 @@ function render(){
   cr=REAL[id];
  }else{
   var w=p.querySelector('#p-works em'),title=w?w.textContent.trim():nm.textContent.trim();
-  var h=hs(id),pl=PAL[h%PAL.length],mo=MOT[(h>>3)%MOT.length].split('A').join(pl[2]);
+  var h=hs(id),pl=PAL[h%PAL.length],mo=MOT[(h>>>3)%MOT.length].split('A').join(pl[2]);
   var fs=title.length<=10?44:title.length<=18?36:28;
   lib='<div class="lib"><div class="gen" style="background:'+pl[0]+'"><svg viewBox="0 0 290 420" preserveAspectRatio="xMidYMid slice">'+mo+'</svg><div class="a" style="color:'+pl[2]+'">'+esc(nm.textContent.trim())+'</div><div class="t" style="color:'+pl[1]+';font-size:'+fs+'px">'+esc(title)+'</div></div></div>';
  }
