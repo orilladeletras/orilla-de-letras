@@ -57,3 +57,4 @@
   mejora();
   new MutationObserver(mejora).observe(grid,{childList:true});
 })();
+/*foto-chica*/(function(){var s=document.createElement('style');s.textContent='#autos .foto{max-width:360px;margin-inline:auto}#autos .foto img{width:100%;height:auto;display:block}';document.head.appendChild(s)})();
