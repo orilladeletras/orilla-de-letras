@@ -35,7 +35,7 @@ st.textContent='#panel .tapa-bg{position:absolute;left:0;right:0;top:0;height:56
 +'#panel .tapa-bg .gen svg{position:absolute;inset:0;width:100%;height:100%}'
 +'#panel .tapa-bg .gen .a{position:absolute;left:30px;top:26px;font:500 10px/1 var(--mono,monospace);letter-spacing:.2em;text-transform:uppercase}'
 +'#panel .tapa-bg .gen .t{position:absolute;left:30px;right:18px;bottom:34px;font-family:"Instrument Serif",Georgia,serif;line-height:.98}'
-+'#panel .tapa-bg .veil{position:absolute;inset:0}'
++'#panel .tapa-bg .veil{position:absolute;inset:0;z-index:1}'
 +'#panel .tapa-cr{margin:26px 0 8px;font:400 11px/1.5 var(--mono,monospace);opacity:.7}'
 +'#panel .tapa-cr a{color:inherit;text-decoration:underline}'
 +'@media (max-width:520px){#panel .tapa-bg .lib{width:200px;right:-30px}#panel .tapa-bg .gen{width:200px;height:290px}}';
@@ -46,7 +46,7 @@ function render(){
  var old=p.querySelector('.tapa-bg');if(old)old.remove();
  var oc=p.querySelector('.tapa-cr');if(oc)oc.remove();
  if(!id||!p.classList.contains('open'))return;
- var bg=getComputedStyle(p).backgroundColor;
+ var tc=(getComputedStyle(p).color.match(/[0-9.]+/g)||[0,0,0]).map(Number),dk=(tc[0]*.3+tc[1]*.59+tc[2]*.11)>128,vb=dk?'12,32,64':'247,243,230';
  var box=document.createElement('div');box.className='tapa-bg';box.setAttribute('aria-hidden','true');
  var lib='',cr='';
  if(REAL[id]){
@@ -58,7 +58,7 @@ function render(){
   var fs=title.length<=10?44:title.length<=18?36:28;
   lib='<div class="lib"><div class="gen" style="background:'+pl[0]+'"><svg viewBox="0 0 290 420" preserveAspectRatio="xMidYMid slice">'+mo+'</svg><div class="a" style="color:'+pl[2]+'">'+esc(nm.textContent.trim())+'</div><div class="t" style="color:'+pl[1]+';font-size:'+fs+'px">'+esc(title)+'</div></div></div>';
  }
- box.innerHTML=lib+'<div class="veil" style="background:linear-gradient(98deg,'+bg+' 40%,color-mix(in srgb,'+bg+' 28%,transparent) 100%)"></div>';
+ box.innerHTML=lib+'<div class="veil" style="background:linear-gradient(98deg,rgba('+vb+',.82) 0%,rgba('+vb+',.66) 55%,rgba('+vb+',.42) 100%)"></div>';
  p.insertBefore(box,p.firstChild);
  if(cr){var c=document.createElement('p');c.className='tapa-cr';c.innerHTML='Tapa: '+esc(cr[2])+' · dominio público · <a href="'+cr[1]+'" target="_blank" rel="noopener">Wikimedia Commons ↗</a>';p.appendChild(c)}
 }
