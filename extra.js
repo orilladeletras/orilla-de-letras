@@ -6,8 +6,8 @@ css.textContent=[
 '#tl::-webkit-scrollbar{height:4px}',
 '#tl::-webkit-scrollbar-track{background:transparent}',
 '#tl::-webkit-scrollbar-thumb{background:rgba(255,216,74,.55);border-radius:4px}',
-'.hero-cta a.chapa{position:relative;border:0!important;border-radius:5px!important;color:#fff8dc!important;font-weight:700;text-shadow:0 0 3px #0a2a14,0 1px 2px #0a2a14;background:linear-gradient(8deg,transparent 0 28%,rgba(160,225,150,.85) 28% 44%,transparent 44% 100%),linear-gradient(-6deg,transparent 0 58%,rgba(14,70,36,.8) 58% 76%,transparent 76% 100%),repeating-linear-gradient(174deg,#2f8f4e 0 8px,#58bb6e 8px 13px,#1f6b3a 13px 19px,#9bdc8e 19px 22px,#14502b 22px 28px)!important;box-shadow:0 3px 0 rgba(8,40,20,.5),0 9px 16px rgba(0,0,0,.35)!important;filter:url(#pincel);transform:rotate(-1deg);transition:transform .2s}',
-'.hero-cta a.chapa[data-pais=ARGENTINA]{background:linear-gradient(-9deg,transparent 0 22%,rgba(190,235,150,.8) 22% 38%,transparent 38% 100%),linear-gradient(5deg,transparent 0 62%,rgba(10,60,30,.8) 62% 80%,transparent 80% 100%),repeating-linear-gradient(182deg,#256f3c 0 9px,#4aa862 9px 14px,#12482a 14px 20px,#86cf7e 20px 23px,#1c8048 23px 29px)!important;transform:rotate(1deg)}',
+'.hero-cta a.chapa{position:relative;border:0!important;border-radius:4px!important;color:#f6fbe8!important;font-weight:600;letter-spacing:.04em;text-shadow:0 1px 2px rgba(8,40,20,.75);background:linear-gradient(7deg,transparent 0 34%,rgba(190,235,170,.55) 34% 42%,transparent 42% 100%),linear-gradient(-5deg,transparent 0 62%,rgba(20,80,44,.45) 62% 70%,transparent 70% 100%),repeating-linear-gradient(177deg,#3f9a5c 0 4px,#5db374 4px 7px,#2f8250 7px 11px,#8fd085 11px 13px,#4aa468 13px 17px)!important;box-shadow:0 2px 0 rgba(8,40,20,.35),0 6px 12px rgba(0,0,0,.25)!important;filter:url(#pincel);transform:rotate(-.6deg);transition:transform .2s}',
+'.hero-cta a.chapa[data-pais=ARGENTINA]{background:linear-gradient(-6deg,transparent 0 30%,rgba(200,240,170,.5) 30% 38%,transparent 38% 100%),linear-gradient(4deg,transparent 0 64%,rgba(14,64,34,.45) 64% 72%,transparent 72% 100%),repeating-linear-gradient(181deg,#348a52 0 4px,#52ac6c 4px 7px,#27744a 7px 11px,#96d48a 11px 13px,#42a064 13px 17px)!important;transform:rotate(.6deg)}',
 '.hero-cta a.chapa::before,.hero-cta a.chapa::after{display:none!important}',
 '.hero-cta a.chapa:hover{transform:rotate(0) translateY(-2px)}',
 '#tl{perspective:900px}',
@@ -18,10 +18,10 @@ css.textContent=[
 '#tl .tlin b{position:absolute;top:-4px;left:50%;transform:translateX(-50%);padding:2px 7px;border-radius:10px;background:#1a0f0a;color:#ffd84a;font:500 11px "DM Mono",monospace;white-space:nowrap}'
 ].join('');
 document.head.appendChild(css);
-var sv=document.createElement('div');sv.innerHTML='<svg width="0" height="0" style="position:absolute" aria-hidden="true"><filter id="pincel" x="-5%" y="-10%" width="110%" height="120%"><feTurbulence type="fractalNoise" baseFrequency=".03 .13" numOctaves="2" seed="4" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="5"/></filter></svg>';document.body.appendChild(sv.firstChild);
+var sv=document.createElement('div');sv.innerHTML='<svg width="0" height="0" style="position:absolute" aria-hidden="true"><filter id="pincel" x="-5%" y="-10%" width="110%" height="120%"><feTurbulence type="fractalNoise" baseFrequency=".025 .1" numOctaves="2" seed="4" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="3"/></filter></svg>';document.body.appendChild(sv.firstChild);
 var tl=document.getElementById('tl');if(!tl)return;
 if(getComputedStyle(tl).position==='static')tl.style.position='relative';
-tl.style.height='205px';[].forEach.call(tl.querySelectorAll('.dot'),function(d){var y=parseFloat(d.style.top);if(!isNaN(y))d.style.top=(34+(y-62)*.6)+'px'});[].forEach.call(tl.querySelectorAll('.tick'),function(k){k.style.top='180px'});
+tl.style.height='150px';[].forEach.call(tl.querySelectorAll('.dot'),function(d){var y=parseFloat(d.style.top);if(!isNaN(y))d.style.top=(24+(y-62)*.42)+'px'});[].forEach.call(tl.querySelectorAll('.tick'),function(k){k.style.top='125px'});
 var ln=document.createElement('div');ln.className='tlin';ln.innerHTML='<b></b>';tl.appendChild(ln);
 var lab=ln.firstChild,x=0,target=null,t0=performance.now(),dir=1,pos=0;
 tl.addEventListener('pointermove',function(e){var r=tl.getBoundingClientRect();target=Math.max(0,Math.min(tl.scrollWidth,e.clientX-r.left+tl.scrollLeft))});
