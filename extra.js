@@ -65,3 +65,34 @@ bt.addEventListener('click',function(){
   pn.innerHTML=(P.length||C.length)?('<div>'+(P.length?f(P):'Aún sin datos')+'</div>'+(C.length?'<div style="margin-top:6px">'+f(C)+'</div>':'')+'<small>Lugares aproximados de las visitas desde que se activó el registro.</small>'):'Todavía no hay visitas registradas por lugar.';
  })});
 })();
+
+/*mejoras-func*/
+(function(){
+var q=document.getElementById('q'),p=document.getElementById('panel');
+document.addEventListener('keydown',function(e){
+ var t=e.target,tag=t&&t.tagName;
+ if(e.key==='/'&&q&&tag!=='INPUT'&&tag!=='TEXTAREA'&&!e.ctrlKey&&!e.metaKey){e.preventDefault();q.focus();q.select&&q.select()}
+ else if(e.key==='Escape'&&p&&p.classList.contains('open')){var c=document.getElementById('close');c&&c.click()}
+});
+if(q&&!q.dataset.ay){q.dataset.ay=1;q.setAttribute('aria-keyshortcuts','/');q.placeholder=q.placeholder+'  ( / )'}
+if(p){
+ var st=document.createElement('style');
+ st.textContent='.cplink{margin:0 0 0 8px;font:500 12px/1 "DM Mono",monospace;letter-spacing:.04em;padding:9px 12px;min-height:36px;border:1px solid currentColor;border-radius:999px;background:transparent;color:inherit;cursor:pointer;opacity:.8}.cplink:hover,.cplink:focus-visible{opacity:1}';
+ document.head.appendChild(st);
+ var put=function(){
+  if(p.querySelector('.cplink'))return;
+  var nx=p.querySelector('#next');if(!nx)return;
+  var b=document.createElement('button');b.type='button';b.className='cplink';b.textContent='Copiar enlace';
+  b.addEventListener('click',function(){
+   var u=location.href,ok=function(){b.textContent='¡Copiado!';setTimeout(function(){b.textContent='Copiar enlace'},1600)};
+   if(navigator.clipboard&&navigator.clipboard.writeText)navigator.clipboard.writeText(u).then(ok,function(){});else{var a=document.createElement('textarea');a.value=u;document.body.appendChild(a);a.select();try{document.execCommand('copy');ok()}catch(_){}a.remove()}
+  });
+  nx.insertAdjacentElement('afterend',b);
+ };
+ put();
+ new MutationObserver(put).observe(p,{childList:true,subtree:true});
+}
+var ld=document.createElement('script');ld.type='application/ld+json';
+ld.textContent=JSON.stringify({'@context':'https://schema.org','@type':'WebSite',name:'Orilla de Letras',inLanguage:'es',description:'Literatura uruguaya y argentina: autores, cruces y crítica del Río de la Plata.',url:location.origin+location.pathname});
+document.head.appendChild(ld);
+})();
