@@ -89,3 +89,7 @@
 .panel .px span{font-size:17px!important;line-height:28px!important}
 .panel a.ed,.panel #p-yrs,.panel h4,.panel .tag{font-family:'DM Mono',ui-monospace,monospace!important}
 #intro,.hero .lead{font-family:'Newsreader',Georgia,serif;font-size:clamp(19px,5vw,23px);line-height:1.55;font-weight:400}
+
+/*sinamarillo*/
+h1 em{background-image:linear-gradient(90deg,#7CC4F4,#a9d6f5 55%,#e4f1fb)!important;-webkit-background-clip:text;background-clip:text}
+#intro,.hero .lead{font-size:clamp(17px,4.6vw,20px)!important}
