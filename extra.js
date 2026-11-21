@@ -6,9 +6,6 @@ css.textContent=[
 '#tl::-webkit-scrollbar{height:4px}',
 '#tl::-webkit-scrollbar-track{background:transparent}',
 '#tl::-webkit-scrollbar-thumb{background:rgba(255,216,74,.55);border-radius:4px}',
-'.hero-cta a.chapa{border-color:#3d6b55!important;box-shadow:0 6px 14px rgba(0,0,0,.28)!important}',
-'.hero-cta a.chapa::before{background:linear-gradient(#3b8a5c,#1f5c3b)!important;color:#f3fbe9!important}',
-'.hero-cta a.chapa[data-pais=ARGENTINA]::before{background:linear-gradient(#69b886,#3a8a5c)!important}',
 '#tl{perspective:900px}',
 '#tl .dot{transform-style:preserve-3d}',
 '#tl .dot i{display:block;width:17px;height:17px;border-radius:50%;background:radial-gradient(circle at 36% 30%,rgba(255,255,255,.75) 0,rgba(255,255,255,0) 38%),radial-gradient(circle,rgba(90,170,235,.95) 0,rgba(26,107,184,.8) 50%,rgba(10,42,76,0) 100%);filter:blur(1.3px) brightness(calc(1 + var(--n,0)*.35));box-shadow:0 0 14px rgba(70,150,230,.55);transform:translateZ(calc(var(--n,0)*34px)) translateY(calc(var(--n,0)*-7px)) scale(calc(1 + var(--n,0)*.55))}',
@@ -36,4 +33,32 @@ function frame(now){
   requestAnimationFrame(frame)
 }
 requestAnimationFrame(frame);
+})();
+
+(function(){
+var NS='orilladeletras-ol',B='https://abacus.jasoncameron.dev/';
+var PA={UY:'Uruguay',AR:'Argentina',BR:'Brasil',CL:'Chile',PY:'Paraguay',ES:'España',US:'Estados Unidos',MX:'México',CO:'Colombia',PE:'Perú',FR:'Francia',DE:'Alemania'};
+var CI=['Montevideo','Buenos Aires','Rosario','Córdoba','La Plata','Mendoza','Salto','Paysandú','Maldonado','Colonia del Sacramento','Rivera','Madrid'];
+function slug(s){return String(s||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'')}
+function hit(k){return fetch(B+'hit/'+NS+'/'+k).catch(function(){})}
+function get(k){return fetch(B+'get/'+NS+'/'+k).then(function(r){return r.ok?r.json():{value:0}}).then(function(j){return j.value||0}).catch(function(){return 0})}
+try{if(!sessionStorage.getItem('ol_lug')){sessionStorage.setItem('ol_lug','1');
+fetch('https://ipwho.is/?fields=success,country_code,city').then(function(r){return r.json()}).then(function(g){
+if(!g||!g.success)return;hit('p-'+(PA[g.country_code]?g.country_code:'otros'));
+var cs=slug(g.city);for(var i=0;i<CI.length;i++)if(slug(CI[i])===cs){hit('c-'+cs);break}}).catch(function(){})}}catch(e){}
+var st=document.createElement('style');
+st.textContent='.vlugb{position:fixed;left:12px;bottom:40px;z-index:56;padding:3px 9px;border-radius:12px;border:0;background:#0B2540;color:#ffd84a;font:500 11px "DM Mono",monospace;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.35)}.vlug{position:fixed;left:12px;bottom:68px;z-index:56;max-width:260px;padding:10px 12px;border-radius:10px;background:rgba(11,37,64,.96);color:#e8f1fb;font:12px/1.5 "DM Mono",monospace;box-shadow:0 6px 18px rgba(0,0,0,.4)}.vlug b{color:#ffd84a;font-weight:500}.vlug small{display:block;opacity:.6;margin-top:6px}';
+document.head.appendChild(st);
+var bt=document.createElement('button');bt.type='button';bt.className='vlugb';bt.textContent='📍 de dónde';document.body.appendChild(bt);
+var pn=null;
+bt.addEventListener('click',function(){
+ if(pn){pn.remove();pn=null;return}
+ pn=document.createElement('div');pn.className='vlug';pn.textContent='Cargando lugares…';document.body.appendChild(pn);
+ var ks=Object.keys(PA).map(function(c){return ['p-'+c,PA[c]]}).concat([['p-otros','Otros países']]).concat(CI.map(function(c){return ['c-'+slug(c),c]}));
+ Promise.all(ks.map(function(k){return get(k[0])})).then(function(v){
+  if(!pn)return;var P=[],C=[];
+  ks.forEach(function(k,i){if(v[i]>0)(k[0].charAt(0)==='p'?P:C).push([k[1],v[i]])});
+  function f(a){return a.sort(function(x,y){return y[1]-x[1]}).map(function(x){return x[0]+' <b>'+x[1]+'</b>'}).join(' · ')}
+  pn.innerHTML=(P.length||C.length)?('<div>'+(P.length?f(P):'Aún sin datos')+'</div>'+(C.length?'<div style="margin-top:6px">'+f(C)+'</div>':'')+'<small>Lugares aproximados de las visitas desde que se activó el registro.</small>'):'Todavía no hay visitas registradas por lugar.';
+ })});
 })();
