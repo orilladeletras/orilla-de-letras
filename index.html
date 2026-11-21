@@ -127,6 +127,23 @@ canvas.rio{object-fit:cover;object-position:center}
 <script src="autos.js?v=2"></script>
 <script src="calido.js?v=1"></script>
 <script src="extra.js?v=12"></script>
+<script>
+(function(){
+  var m=document.getElementById('apoyo'),cp=document.getElementById('copiar');
+  function abrir(){m.classList.add('open');cp.focus()}
+  function cerrar(){m.classList.remove('open')}
+  document.getElementById('apoyar').onclick=abrir;
+  document.getElementById('cerrarApoyo').onclick=cerrar;
+  m.addEventListener('click',function(e){if(e.target===m)cerrar()});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&m.classList.contains('open'))cerrar()});
+  cp.onclick=function(){
+    var t=document.getElementById('prex').textContent;
+    try{navigator.clipboard.writeText(t).then(function(){cp.textContent='Copiado'},function(){cp.textContent='Seleccioná el número'})}
+    catch(e){cp.textContent='Seleccioná el número'}
+    setTimeout(function(){cp.textContent='Copiar'},2200);
+  };
+})();
+</script>
 
 </body>
 </html>
