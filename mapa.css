@@ -77,3 +77,15 @@
 .panel .px{background:transparent!important;border:0!important;border-top:1.5px dashed var(--pm)!important;border-radius:0!important;padding:14px 0 6px!important}
 .panel .px b{color:var(--pk)!important;font-family:var(--serif,Georgia,serif);font-size:17px}
 .panel .px span{color:var(--pk)!important;opacity:.85;line-height:28px}
+
+/*letra*/
+.panel #p-bio,.panel .start,.panel .px span{font-family:'Newsreader',Georgia,serif!important;font-optical-sizing:auto;font-weight:400}
+.panel #p-bio{font-size:19px!important;line-height:32px!important;letter-spacing:.003em;hyphens:auto}
+.panel #p-bio::first-letter{font-family:'Instrument Serif',Georgia,serif;font-size:3.3em;float:left;line-height:.8;padding:6px 8px 0 0;color:#9b3d2a}
+[data-theme="dark"] .panel #p-bio::first-letter{color:#f0a78f}
+.panel #p-works .w em{font-family:'Instrument Serif',Georgia,serif!important;font-size:24px!important;line-height:1.1;font-style:italic}
+.panel .start{font-size:19px!important;line-height:32px!important}
+.panel .px b{font-family:'Instrument Serif',Georgia,serif!important;font-size:22px!important;font-weight:400;display:block;margin-bottom:2px}
+.panel .px span{font-size:17px!important;line-height:28px!important}
+.panel a.ed,.panel #p-yrs,.panel h4,.panel .tag{font-family:'DM Mono',ui-monospace,monospace!important}
+#intro,.hero .lead{font-family:'Newsreader',Georgia,serif;font-size:clamp(19px,5vw,23px);line-height:1.55;font-weight:400}
