@@ -16,6 +16,7 @@ css.textContent=[
 document.head.appendChild(css);
 var tl=document.getElementById('tl');if(!tl)return;
 if(getComputedStyle(tl).position==='static')tl.style.position='relative';
+tl.style.height='205px';[].forEach.call(tl.querySelectorAll('.dot'),function(d){var y=parseFloat(d.style.top);if(!isNaN(y))d.style.top=(34+(y-62)*.6)+'px'});[].forEach.call(tl.querySelectorAll('.tick'),function(k){k.style.top='180px'});
 var ln=document.createElement('div');ln.className='tlin';ln.innerHTML='<b></b>';tl.appendChild(ln);
 var lab=ln.firstChild,x=0,target=null,t0=performance.now(),dir=1,pos=0;
 tl.addEventListener('pointermove',function(e){var r=tl.getBoundingClientRect();target=Math.max(0,Math.min(tl.scrollWidth,e.clientX-r.left+tl.scrollLeft))});
