@@ -96,3 +96,26 @@ var ld=document.createElement('script');ld.type='application/ld+json';
 ld.textContent=JSON.stringify({'@context':'https://schema.org','@type':'WebSite',name:'Orilla de Letras',inLanguage:'es',description:'Literatura uruguaya y argentina: autores, cruces y crítica del Río de la Plata.',url:location.origin+location.pathname});
 document.head.appendChild(ld);
 })();
+
+/*sugerencia*/
+(function(){
+var q=document.getElementById('q');if(!q)return;
+var box=document.createElement('div');box.setAttribute('role','status');box.setAttribute('aria-live','polite');
+box.style.cssText='font:400 14px/1.4 "Hanken Grotesk",sans-serif;margin:8px 4px 0;min-height:0';
+q.insertAdjacentElement('afterend',box);
+function n(s){return s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9 ]/g,'').trim()}
+function d(a,b){var m=a.length,k=b.length,p=[],i,j,c;for(j=0;j<=k;j++)p[j]=j;for(i=1;i<=m;i++){var l=p[0];p[0]=i;for(j=1;j<=k;j++){c=p[j];p[j]=Math.min(p[j]+1,p[j-1]+1,l+(a[i-1]===b[j-1]?0:1));l=c}}return p[k]}
+function names(){var o=[],s={};document.querySelectorAll('.dot[data-id]').forEach(function(x){var t=(x.textContent||'').trim();if(t&&!s[t]){s[t]=1;o.push(t)}});return o}
+function run(){
+ var v=n(q.value);box.textContent='';
+ if(v.length<3)return;
+ var best=null,bd=9,hit=false;
+ names().forEach(function(t){var w=n(t);if(w.indexOf(v)>-1){hit=true}var dd=Math.min(d(v,w),d(v,w.split(' ').pop()));if(dd<bd){bd=dd;best=t}});
+ if(hit||!best||bd>Math.max(1,Math.floor(v.length/4)))return;
+ var a=document.createElement('button');a.type='button';a.textContent=best;
+ a.style.cssText='font:inherit;font-weight:600;text-decoration:underline;background:none;border:0;padding:8px 2px;min-height:36px;color:inherit;cursor:pointer';
+ a.addEventListener('click',function(){q.value=best;q.dispatchEvent(new Event('input',{bubbles:true}));box.textContent=''});
+ box.appendChild(document.createTextNode('¿Quisiste decir '));box.appendChild(a);box.appendChild(document.createTextNode('?'));
+}
+var tm;q.addEventListener('input',function(){clearTimeout(tm);tm=setTimeout(run,220)});
+})();
