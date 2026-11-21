@@ -2,6 +2,10 @@
 var css=document.createElement('style');
 css.textContent=[
 '#autores .chips{display:none!important}',
+'#tl{scrollbar-width:thin;scrollbar-color:rgba(255,216,74,.55) transparent}',
+'#tl::-webkit-scrollbar{height:4px}',
+'#tl::-webkit-scrollbar-track{background:transparent}',
+'#tl::-webkit-scrollbar-thumb{background:rgba(255,216,74,.55);border-radius:4px}',
 '#tl{perspective:900px}',
 '#tl .dot{transform-style:preserve-3d}',
 '#tl .dot i{display:block;width:17px;height:17px;border-radius:50%;background:radial-gradient(circle at 36% 30%,rgba(255,255,255,.75) 0,rgba(255,255,255,0) 38%),radial-gradient(circle,rgba(90,170,235,.95) 0,rgba(26,107,184,.8) 50%,rgba(10,42,76,0) 100%);filter:blur(1.3px) brightness(calc(1 + var(--n,0)*.35));box-shadow:0 0 14px rgba(70,150,230,.55);transform:translateZ(calc(var(--n,0)*34px)) translateY(calc(var(--n,0)*-7px)) scale(calc(1 + var(--n,0)*.55))}',
