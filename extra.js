@@ -6,6 +6,10 @@ css.textContent=[
 '#tl::-webkit-scrollbar{height:4px}',
 '#tl::-webkit-scrollbar-track{background:transparent}',
 '#tl::-webkit-scrollbar-thumb{background:rgba(255,216,74,.55);border-radius:4px}',
+'.hero-cta a.chapa{position:relative;border:0!important;border-radius:5px!important;color:#2a0d08!important;font-weight:700;text-shadow:0 1px 0 rgba(255,240,170,.55);background:linear-gradient(98deg,transparent 0 4%,rgba(255,238,160,.85) 4% 20%,transparent 20% 100%),repeating-linear-gradient(177deg,#f7c52a 0 9px,#eea21a 9px 14px,#fbdc6c 14px 20px)!important;box-shadow:0 3px 0 rgba(120,50,0,.35),0 9px 16px rgba(0,0,0,.35)!important;filter:url(#pincel);transform:rotate(-1deg);transition:transform .2s}',
+'.hero-cta a.chapa[data-pais=ARGENTINA]{color:#fff3d6!important;text-shadow:0 1px 0 rgba(60,5,5,.5);background:linear-gradient(98deg,transparent 0 6%,rgba(255,150,100,.7) 6% 22%,transparent 22% 100%),repeating-linear-gradient(177deg,#d9341d 0 9px,#b01f14 9px 14px,#ee6a3a 14px 20px)!important;transform:rotate(1deg)}',
+'.hero-cta a.chapa::before,.hero-cta a.chapa::after{display:none!important}',
+'.hero-cta a.chapa:hover{transform:rotate(0) translateY(-2px)}',
 '#tl{perspective:900px}',
 '#tl .dot{transform-style:preserve-3d}',
 '#tl .dot i{display:block;width:17px;height:17px;border-radius:50%;background:radial-gradient(circle at 36% 30%,rgba(255,255,255,.75) 0,rgba(255,255,255,0) 38%),radial-gradient(circle,rgba(90,170,235,.95) 0,rgba(26,107,184,.8) 50%,rgba(10,42,76,0) 100%);filter:blur(1.3px) brightness(calc(1 + var(--n,0)*.35));box-shadow:0 0 14px rgba(70,150,230,.55);transform:translateZ(calc(var(--n,0)*34px)) translateY(calc(var(--n,0)*-7px)) scale(calc(1 + var(--n,0)*.55))}',
@@ -14,6 +18,7 @@ css.textContent=[
 '#tl .tlin b{position:absolute;top:-4px;left:50%;transform:translateX(-50%);padding:2px 7px;border-radius:10px;background:#1a0f0a;color:#ffd84a;font:500 11px "DM Mono",monospace;white-space:nowrap}'
 ].join('');
 document.head.appendChild(css);
+var sv=document.createElement('div');sv.innerHTML='<svg width="0" height="0" style="position:absolute" aria-hidden="true"><filter id="pincel" x="-5%" y="-10%" width="110%" height="120%"><feTurbulence type="fractalNoise" baseFrequency=".03 .13" numOctaves="2" seed="4" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="5"/></filter></svg>';document.body.appendChild(sv.firstChild);
 var tl=document.getElementById('tl');if(!tl)return;
 if(getComputedStyle(tl).position==='static')tl.style.position='relative';
 tl.style.height='205px';[].forEach.call(tl.querySelectorAll('.dot'),function(d){var y=parseFloat(d.style.top);if(!isNaN(y))d.style.top=(34+(y-62)*.6)+'px'});[].forEach.call(tl.querySelectorAll('.tick'),function(k){k.style.top='180px'});
