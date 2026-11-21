@@ -89,11 +89,7 @@ canvas.rio{object-fit:cover;object-position:center}
 
   </section>
 
-  <section class="sec" id="mesa">
-    <h2>La mesa</h2>
-    <p class="lead">Radio, mate y diario: la mesa de lectura de siempre.</p>
-    <figure class="mesa"><img id="mesaImg" src="mesa-clasica.jpg" alt="Mesa de madera con una radio a transistores, un mate y un diario con el título Orillas"></figure>
-  </section>
+  
 
   <footer>Fechas y títulos de referencia general. Para citar, verificá siempre en la edición que consultes. La época corresponde al período de la obra emblemática, no al nacimiento.
     <div class="visitas"><img src="https://hits.sh/orilladeletras.github.io/orilla-de-letras.svg?style=flat-square&amp;label=Visitas&amp;color=155FA8&amp;labelColor=0B2540" alt="Contador de visitas" height="22"></div>
@@ -131,26 +127,6 @@ canvas.rio{object-fit:cover;object-position:center}
 <script src="autos.js?v=2"></script>
 <script src="calido.js?v=1"></script>
 <script src="extra.js?v=12"></script>
-<script>
-(function(){
-  var im=document.getElementById('mesaImg');
-  function ocultar(){document.getElementById('mesa').style.display='none'}
-  im.addEventListener('error',ocultar);
-  if(im.complete&&im.naturalWidth===0)ocultar();
-  var m=document.getElementById('apoyo'),cp=document.getElementById('copiar');
-  function abrir(){m.classList.add('open');cp.focus()}
-  function cerrar(){m.classList.remove('open')}
-  document.getElementById('apoyar').onclick=abrir;
-  document.getElementById('cerrarApoyo').onclick=cerrar;
-  m.addEventListener('click',function(e){if(e.target===m)cerrar()});
-  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&m.classList.contains('open'))cerrar()});
-  cp.onclick=function(){
-    var t=document.getElementById('prex').textContent;
-    try{navigator.clipboard.writeText(t).then(function(){cp.textContent='Copiado'},function(){cp.textContent='Seleccioná el número'})}
-    catch(e){cp.textContent='Seleccioná el número'}
-    setTimeout(function(){cp.textContent='Copiar'},2200);
-  };
-})();
-</script>
+
 </body>
 </html>
