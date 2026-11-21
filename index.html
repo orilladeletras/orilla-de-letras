@@ -9,16 +9,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Hanken+Grotesk:wght@400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 <style>
-.cmp{position:relative;aspect-ratio:1408/768;border-radius:18px;overflow:hidden;margin-top:20px;background:var(--card);box-shadow:0 2px 4px -1px color-mix(in srgb,var(--ink) 16%,transparent),0 26px 36px -22px color-mix(in srgb,var(--ink) 55%,transparent);--v:50}
-.cmp img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
-.cmp .cmp-a{clip-path:inset(0 calc(100% - var(--v)*1%) 0 0)}
-.cmp input{position:absolute;inset:0;width:100%;height:100%;margin:0;opacity:0;cursor:ew-resize}
-.cmp-bar{position:absolute;top:0;bottom:0;left:calc(var(--v)*1%);width:3px;background:#fff;transform:translateX(-50%);box-shadow:0 0 0 1px rgba(0,0,0,.25);pointer-events:none}
-.cmp-bar::after{content:"\2194";position:absolute;top:50%;left:50%;width:44px;height:44px;margin:-22px 0 0 -22px;border-radius:50%;background:#fff;color:#0B2540;display:grid;place-items:center;font-size:20px;box-shadow:0 6px 16px rgba(0,0,0,.35)}
-.cmp-l{position:absolute;top:14px;font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;background:rgba(11,37,64,.78);color:#fff;border-radius:999px;padding:5px 12px;pointer-events:none}
-.cmp-l.l1{left:14px}.cmp-l.l2{right:14px}
-.cmp:focus-within{outline:2px solid var(--accent);outline-offset:4px}
-.cmp.solo input,.cmp.solo .cmp-bar,.cmp.solo .cmp-l.l1,.cmp.solo .cmp-a{display:none}
 .apoyo{position:fixed;inset:0;display:none;place-items:center;padding:20px;background:rgba(5,12,24,.6);z-index:40}
 .apoyo.open{display:grid}
 .apoyo .box{width:min(440px,100%);background:var(--card);color:var(--ink);border:1px solid var(--line);border-radius:20px;padding:28px 26px;box-shadow:0 30px 60px -20px rgba(0,0,0,.5)}
@@ -28,6 +18,7 @@
 .apoyo .num small{display:block;font-family:var(--mono);font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:var(--muted)}
 .apoyo .num strong{font-family:var(--mono);font-size:28px;letter-spacing:.06em}
 .apoyo .row{display:flex;justify-content:flex-end;gap:10px;margin-top:20px}
+.mesa{margin:20px 0 0}.mesa img{display:block;width:100%;height:auto;border-radius:18px;box-shadow:0 26px 36px -22px color-mix(in srgb,var(--ink) 55%,transparent)}
 .pill.gift{background:var(--accent);border-color:var(--accent);color:var(--on);font-weight:500}
 .pill.gift:hover{filter:brightness(1.08)}
 </style>
@@ -73,19 +64,13 @@
   </section>
 
   <section class="sec" id="mesa">
-    <h2>Dos mesas, dos épocas</h2>
-    <p class="lead">Arrastrá la barra para pasar de la mesa clásica, con radio a transistores y diario en papel, a la mesa de hoy.</p>
-    <div class="cmp" id="cmp">
-      <img class="cmp-b" src="mesa-moderna.svg" alt="Ilustración de una mesa moderna con radio digital, tableta, mate y plantas">
-      <img class="cmp-a" id="cmpA" src="mesa-clasica.jpg" alt="Mesa de madera con una radio a transistores, un mate y un diario de Literatura Rioplatense">
-      <input id="cmpR" type="range" min="0" max="100" value="50" aria-label="Comparar la mesa clásica con la mesa moderna">
-      <div class="cmp-bar"></div>
-      <span class="cmp-l l1">Clásica</span><span class="cmp-l l2">Moderna</span>
-    </div>
+    <h2>La mesa</h2>
+    <p class="lead">Radio, mate y diario: la mesa de lectura de siempre.</p>
+    <figure class="mesa"><img id="mesaImg" src="mesa-clasica.jpg" alt="Mesa de madera con una radio a transistores, un mate y un diario con el título Orillas"></figure>
   </section>
 
   <footer>Fechas y títulos de referencia general. Para citar, verificá siempre en la edición que consultes. La época corresponde al período de la obra emblemática, no al nacimiento.
-    <div class="visitas"><img src="https://hits.sh/josejorgemontaldo2-oss.github.io/orilla-de-letras.svg?style=flat-square&amp;label=Visitas&amp;color=155FA8&amp;labelColor=0B2540" alt="Contador de visitas" height="22"></div>
+    <div class="visitas"><img src="https://hits.sh/orilladeletras.github.io/orilla-de-letras.svg?style=flat-square&amp;label=Visitas&amp;color=155FA8&amp;labelColor=0B2540" alt="Contador de visitas" height="22"></div>
   </footer>
 </div>
 
@@ -116,11 +101,10 @@
 <script src="app.js"></script>
 <script>
 (function(){
-  var c=document.getElementById('cmp'),a=document.getElementById('cmpA'),r=document.getElementById('cmpR');
-  r.addEventListener('input',function(){c.style.setProperty('--v',r.value)});
-  function solo(){c.classList.add('solo')}
-  a.addEventListener('error',solo);
-  if(a.complete&&a.naturalWidth===0)solo();
+  var im=document.getElementById('mesaImg');
+  function ocultar(){document.getElementById('mesa').style.display='none'}
+  im.addEventListener('error',ocultar);
+  if(im.complete&&im.naturalWidth===0)ocultar();
   var m=document.getElementById('apoyo'),cp=document.getElementById('copiar');
   function abrir(){m.classList.add('open');cp.focus()}
   function cerrar(){m.classList.remove('open')}
