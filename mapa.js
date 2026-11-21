@@ -87,4 +87,6 @@
   }
   document.getElementById('mcer').onclick=function(){mp.className='';mp.setAttribute('aria-hidden','true');cancelAnimationFrame(raf);cur=null};
   window.mostrarMapa=mostrar;
+  /*autoabrir*/var st=document.createElement('style');st.textContent='#mapa{height:230px!important;background:none!important}#mapa.on{animation:mIn 1.6s ease both!important;opacity:.55}#mlin line{stroke-width:.9!important;opacity:.4!important;animation-duration:2.4s!important}.nd{font-size:11.5px!important;padding:4px 8px!important;box-shadow:none!important;background:color-mix(in srgb,var(--card) 80%,transparent)!important;opacity:.8;animation-duration:1.4s!important}.nd:hover{opacity:1}.nd.ctr{font-size:13px!important;padding:6px 12px!important;border-width:1px!important}';document.head.appendChild(st);
+  setTimeout(function(){try{var k=Object.keys(VOCES);if(k.length&&!cur)mostrar(k[Math.floor(Math.random()*k.length)])}catch(e){}},600);
 })();
