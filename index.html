@@ -8,7 +8,9 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Hanken+Grotesk:wght@400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="diseno.css">
 <style>
+.rio{-webkit-mask-image:linear-gradient(90deg,transparent,#000 14%,#000 86%,transparent),linear-gradient(180deg,transparent,#000 22%);-webkit-mask-composite:source-in;mask-image:linear-gradient(90deg,transparent,#000 14%,#000 86%,transparent),linear-gradient(180deg,transparent,#000 22%);mask-composite:intersect}
 .apoyo{position:fixed;inset:0;display:none;place-items:center;padding:20px;background:rgba(5,12,24,.6);z-index:40}
 .apoyo.open{display:grid}
 .apoyo .box{width:min(440px,100%);background:var(--card);color:var(--ink);border:1px solid var(--line);border-radius:20px;padding:28px 26px;box-shadow:0 30px 60px -20px rgba(0,0,0,.5)}
@@ -38,11 +40,14 @@
       <a class="btn ghost" href="#autores" style="text-decoration:none">Ver autores</a>
       <a class="btn ghost" href="#cruces" style="text-decoration:none">Ver cruces</a>
     </div>
+    <img class="rio" src="hero-rio.svg" alt="Ilustración: Montevideo y Buenos Aires a cada lado del río, con libros abiertos que cruzan volando bajo la luna" width="1600" height="460">
 
+    <div class="tl-wrap">
     <div class="tl-head"><h2>Línea de tiempo</h2>
       <div class="legend"><span><i style="background:var(--accent)"></i>Uruguay</span><span><i style="background:var(--ar)"></i>Argentina</span><span>un punto por obra emblemática</span></div>
     </div>
     <div class="tl-scroll"><div class="tl" id="tl" role="group" aria-label="Línea de tiempo de obras emblemáticas"></div></div>
+    </div>
   </section>
 
   <section class="sec" id="autores">
