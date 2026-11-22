@@ -1,5 +1,4 @@
 const ERAS=[
- {id:'e1',n:'Fundación y siglo XIX',a:1800,b:1900},
  {id:'e2',n:'Modernismo y novecientos',a:1900,b:1930},
  {id:'e3',n:'Mediados del siglo XX',a:1930,b:1968},
  {id:'e4',n:'Dictadura y exilio',a:1968,b:1985},
@@ -7,13 +6,7 @@ const ERAS=[
 ];
 const PAISES=[{id:'UY',n:'Uruguay'},{id:'AR',n:'Argentina'}];
 const A=[
-{id:'echeverria',p:'AR',n:'Esteban Echeverría',c:'Echeverría',nac:1805,mue:1851,e:'e1',g:['Poesía','Narrativa'],y:1837,
- r:'Introductor del romanticismo en el Río de la Plata. Su relato El matadero, publicado después de su muerte, es leído como uno de los primeros cuentos argentinos y como una crítica al régimen de Rosas.',
- o:[['La cautiva',1837],['Dogma socialista',1846],['El matadero',1871]],s:'El matadero, breve y feroz.'},
-{id:'acevedo',p:'UY',n:'Eduardo Acevedo Díaz',c:'Acevedo Díaz',nac:1851,mue:1921,e:'e1',g:['Narrativa'],y:1888,
- r:'Fundador de la novela histórica uruguaya. Reconstruyó las guerras de independencia con una mirada épica sobre el campo y sus luchas.',
- o:[['Ismael',1888],['Nativa',1890],['Soledad',1894]],s:'Ismael, primera entrega de su ciclo sobre la gesta oriental.'},
-{id:'viana',p:'UY',n:'Javier de Viana',c:'Viana',nac:1868,mue:1926,e:'e1',g:['Narrativa'],y:1896,
+{id:'viana',p:'UY',n:'Javier de Viana',c:'Viana',nac:1868,mue:1926,e:'e2',g:['Narrativa'],y:1896,
  r:'Cuentista y novelista del realismo rural. Retrató con crudeza la vida del gaucho en su ocaso, la violencia y la decadencia del campo.',
  o:[['Campo',1896],['Gaucha',1899],['Gurí y otros cuentos',1901]],s:'Campo, donde ya se ve la mirada dura sobre el mundo rural.'},
 {id:'rodo',p:'UY',n:'José Enrique Rodó',c:'Rodó',nac:1871,mue:1917,e:'e2',g:['Ensayo'],y:1900,
@@ -64,12 +57,6 @@ const A=[
 {id:'liscano',p:'UY',n:'Carlos Liscano',c:'Liscano',nac:1949,mue:null,e:'e5',g:['Narrativa'],y:1994,
  r:'Escritor que desarrolló su obra a partir de su experiencia de prisión política durante la dictadura. Escribe una prosa austera sobre el encierro y la memoria.',
  o:[['El camino a Ítaca',1994],['El furgón de los locos',2001]],s:'El camino a Ítaca, para conocer su voz.'},
-{id:'lautreamont',p:'UY',n:"Conde de Lautréamont (Isidore Ducasse)",c:"Lautréamont",nac:1846,mue:1870,e:'e1',g:["Poesía","Narrativa"],y:1869,
- r:"Nacido en Montevideo y muerto joven en París, escribió en francés un solo libro mayor, una prosa poética de visiones violentas y metamorfosis que los surrealistas leyeron como antecedente. Su obra rompe con toda verosimilitud.",
- o:[["Los cantos de Maldoror",1869],["Poesías",1870]],s:"Los cantos de Maldoror, por fragmentos y sin apuro."},
-{id:'laforgue',p:'UY',n:"Jules Laforgue",c:"Laforgue",nac:1860,mue:1887,e:'e1',g:["Poesía","Narrativa"],y:1885,
- r:"Montevideano de nacimiento, poeta en francés. Introdujo el verso libre, la ironía y el tono de monólogo en la poesía simbolista, y reescribió mitos clásicos con humor desencantado.",
- o:[["Las quejas",1885],["Moralidades legendarias",1887]],s:"Moralidades legendarias, relatos que parodian mitos."},
 {id:'supervielle',p:'UY',n:"Jules Supervielle",c:"Supervielle",nac:1884,mue:1960,e:'e2',g:["Poesía","Narrativa"],y:1926,
  r:"Nacido en Montevideo, escribió en francés poesía y relatos de tono fantástico y tierno. Sus cuentos pueblan el mundo de seres imaginarios y de una melancolía rioplatense que nunca abandonó.",
  o:[["Gravitaciones",1925],["El ladrón de niños",1926],["El niño de la alta mar",1931]],s:"El niño de la alta mar, un cuento breve y extraordinario."},
@@ -298,7 +285,6 @@ const A=[
 ];
 
 const CRUCES=[
- {t:'Un romántico desterrado',x:'Esteban Echeverría, introductor del romanticismo en el Río de la Plata, murió en Montevideo en 1851, desterrado por el régimen de Rosas.',ids:['echeverria']},
  {t:'De Salto a Misiones',x:'Horacio Quiroga nació en Salto, Uruguay, y vivió buena parte de su vida entre Buenos Aires y la selva de Misiones, en Argentina, que es el paisaje de sus cuentos más conocidos.',ids:['quiroga']},
  {t:'Funes, de Fray Bentos',x:'El personaje de Borges que no puede olvidar nada, Ireneo Funes, es un joven de Fray Bentos, en Uruguay. «Funes el memorioso» forma parte de Ficciones (1944).',ids:['borges']},
  {t:'Onetti en Buenos Aires',x:'Onetti vivió largos años en Buenos Aires, donde escribió y publicó buena parte de su obra. Su Santa María es una ciudad de ficción a orillas de un río que recuerda al Plata.',ids:['onetti']},
