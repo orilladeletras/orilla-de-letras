@@ -361,6 +361,15 @@ const A=[
 {id:"bentancor",p:"UY",n:"Martín Bentancor",c:"Bentancor",nac:1979,mue:null,e:"e5",g:["Narrativa"],y:2012,
  r:"Narrador y periodista de Canelones. Su cuento y su novela miran la ciudad, la oficina y los oficios con una prosa de observador atento; Montevideo recibió el Premio Casa de los Escritores y Mordida el Premio Nacional de Literatura en 2021.",
  o:[["Procesión",2009],["La redacción",2010],["Montevideo",2012],["La lluvia sobre el muladar",2017],["Los colores primarios",2019]],s:"Montevideo."},
+{id:"polleri",p:"UY",n:"Felipe Polleri",c:"Polleri",nac:1953,mue:null,e:"e5",g:["Narrativa"],y:1990,
+ r:"Narrador montevideano, colaborador regular de El País Cultural desde 2003 y autor de culto de la narrativa posdictatorial. Su trilogía El dios negro reúne Carnaval, Colores y El rey de las cucarachas, y una prosa violenta y de intensidad poética que la crítica asocia con el estremecimiento vacío y la línea de los raros.",
+ o:[["Carnaval",1990],["Colores",1991],["Amanecer en Lisboa",1998],["El rey de las cucarachas",2001],["Vida de los artistas",2001],["El alma del mundo",2005],["Los animales de Montevideo",2015],["La vida familiar",2016]],s:"Carnaval."},
+{id:"estramil",p:"UY",n:"Mercedes Estramil",c:"Estramil",nac:1965,mue:null,e:"e5",g:["Narrativa"],y:2019,
+ r:"Narradora, poeta y periodista montevideana, considerada una de las voces principales de la literatura uruguaya contemporánea. Su libro de cuentos Mordida obtuvo el primer premio de Narrativa en los Premios Nacionales de Literatura, y Espinos blancos, fiestas privadas es su colección más reciente de relatos.",
+ o:[["Mordida",2019]],s:"Mordida."},
+{id:"dominguez",p:"UY",n:"Carlos María Domínguez",c:"Domínguez",nac:1955,mue:null,e:"e5",g:["Narrativa"],y:2002,
+ r:"Narrador, periodista y biógrafo de Onetti, nacido en Buenos Aires y radicado en Montevideo desde 1989. Su novela La casa de papel, sobre la pasión bibliófila, se tradujo a más de veinte lenguas, y La mujer hablada obtuvo el Premio Bartolomé Hidalgo.",
+ o:[["Pozo de Vargas",1985],["Bicicletas negras",1991],["La mujer hablada",1995],["Tres muescas en mi carabina",2002],["La casa de papel",2002]],s:"La casa de papel."},
 ];
 
 const CRUCES=[
