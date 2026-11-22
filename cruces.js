@@ -12,11 +12,6 @@
    '#cruzgrid .cruz.oculta{display:none!important}'
   +'#cruzgrid .cruz.entra{animation:cruzIn .5s cubic-bezier(.2,.8,.2,1) both;animation-delay:var(--d2,0ms)}'
   +'@keyframes cruzIn{from{opacity:0;transform:translateY(16px) scale(.98)}to{opacity:1;transform:none}}'
-  +'.vermas{position:relative;overflow:hidden;color:#f6f1e1;border:1px solid #1d3f24;border-radius:6px;'
-  +'background:'+tex+',linear-gradient(100deg,rgba(255,255,255,.12),transparent 40%,rgba(0,0,0,.18)),linear-gradient(180deg,#4a7c45,#2f5d34);background-size:320px 90px,100% 100%,100% 100%;'
-  +'box-shadow:inset 0 0 0 3px rgba(255,255,255,.1),inset 0 -6px 10px -6px rgba(0,0,0,.35),0 12px 20px -14px rgba(0,0,0,.65);text-shadow:0 1px 0 rgba(0,0,0,.35)}'
-  +'.vermas:hover,.vermas:focus-visible{background:'+tex+',linear-gradient(100deg,rgba(255,255,255,.18),transparent 40%,rgba(0,0,0,.14)),linear-gradient(180deg,#548a4e,#386b3d);background-size:320px 90px,100% 100%,100% 100%;color:#fff}'
-  +'.vermas small{color:#d6e6c3}'
   +'@media (prefers-reduced-motion:reduce){#cruzgrid .cruz.entra{animation:none}}';
   document.head.appendChild(st);
   var fino=matchMedia('(hover: hover) and (pointer: fine)').matches;
@@ -83,7 +78,6 @@
    '#cruces{border-radius:22px;padding:clamp(22px,4vw,44px) clamp(14px,3.5vw,40px);color:#f6f1e1;'
   +'background:linear-gradient(180deg,rgba(6,24,14,.5),rgba(6,24,14,.6)),var(--pv,none) center/cover no-repeat,#1d4a2e;'
   +'box-shadow:inset 0 0 0 1px rgba(255,255,255,.08),0 24px 40px -28px rgba(0,0,0,.6)}'
-  +'#cruces h2{color:#f6f1e1}#cruces .lead{color:#dbe8cf}'
-  +'#cruces .vermas{border-color:rgba(246,241,225,.5)}';
+  +'#cruces h2{color:#f6f1e1}#cruces .lead{color:#dbe8cf}';
   document.head.appendChild(st);
 })();
