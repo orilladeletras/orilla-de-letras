@@ -36,7 +36,7 @@
   +'.orb .orb-tip{position:absolute;left:0;right:0;bottom:0;margin:0;text-align:center;font:500 11px/1.4 var(--mono,monospace);letter-spacing:.12em;text-transform:uppercase;color:var(--muted,#4F6178);pointer-events:none}'
   +'@keyframes orbGiro{from{rotate:0 1 0 0deg}to{rotate:0 1 0 360deg}}'
       +'body.modo-remolino #grid,body.modo-remolino #vermas{display:none!important}'
-  +'@media (prefers-reduced-motion:reduce){.orb .ring{animation-duration:calc(var(--d,60s)*2)}.orb .slot{transition:none}.orb.succion .oc:not(.sel),.orb.vuelve .oc{transition:none}}';
+  +'@media (prefers-reduced-motion:reduce){.orb .slot{transition:none}.orb.succion .oc:not(.sel),.orb.vuelve .oc{transition:none}}';
   document.head.appendChild(st);
 
   var orb=document.createElement('div');orb.className='orb';orb.setAttribute('role','group');orb.setAttribute('aria-label','Autores en un tubo giratorio; tocá una tarjeta para abrir su ficha');
