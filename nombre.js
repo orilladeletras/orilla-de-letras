@@ -1,8 +1,8 @@
 /* nombre.js: nombre del sitio, texto de presentación y sin la categoría Poesía en filtros y tarjetas.
    Se carga al final para que su texto prevalezca sobre los que dejan los demás scripts. */
 (function(){
-  var DESC='Narrativa argentina y uruguaya, de Hidalgo a las voces de hoy: una ficha por autor o autora, con sus libros clave y las lecturas críticas que vale la pena conocer.';
-  var INTRO='Narrativa argentina y uruguaya, de Hidalgo a las voces de hoy. Elegí un autor o una autora, mirá de qué libros se trata y qué se escribió sobre su obra.';
+  var DESC='Narrativa argentina y uruguaya del siglo XX y XXI. Obras, críticas, ensayos y trabajos académicos sobre narradoras y narradores del Río de la Plata.';
+  var INTRO='Del siglo XX y XXI. Obras, críticas, ensayos y trabajos académicos sobre narradoras y narradores del Río de la Plata.';
   var i=document.getElementById('intro');if(i)i.textContent=INTRO;
   var h=document.querySelector('.hero h1');if(h)h.innerHTML='Narrativa <em>argentina y uruguaya</em>';
   var b=document.querySelector('.bar .brand');if(b)b.textContent='Narrativa Argentina y Uruguaya';
