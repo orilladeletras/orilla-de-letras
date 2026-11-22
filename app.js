@@ -3,7 +3,7 @@ const ERAS=[
  {id:'e2',n:'Modernismo y novecientos',a:1900,b:1930},
  {id:'e3',n:'Mediados del siglo XX',a:1930,b:1968},
  {id:'e4',n:'Dictadura y exilio',a:1968,b:1985},
- {id:'e5',n:'Contemporáneos',a:1985,b:2020}
+ {id:'e5',n:'Contemporáneos',a:1985,b:2030}
 ];
 const PAISES=[{id:'UY',n:'Uruguay'},{id:'AR',n:'Argentina'}];
 const A=[
@@ -223,6 +223,21 @@ const A=[
 {id:'enriquez',p:'AR',n:"Mariana Enríquez",c:"Enríquez",nac:1973,mue:null,e:'e5',g:["Narrativa"],y:2016,
  r:"Narradora del terror rioplatense contemporáneo. Sus cuentos cruzan lo gótico con la memoria política y la violencia de los barrios.",
  o:[["Las cosas que perdimos en el fuego",2016],["Nuestra parte de noche",2019]],s:"Las cosas que perdimos en el fuego."},
+{id:"ladra",p:"UY",n:"Eugenia Ladra",c:"Ladra",nac:1992,mue:null,e:"e5",g:["Narrativa"],y:2024,
+ r:"Narradora montevideana, formada en Comunicación y en Creación Literaria. Carnada, su primera novela, sucede en Paso Chico, un pueblo ficticio y caluroso a la orilla de un río, donde la adolescente Marga vive su despertar entre el agobio, la oralidad del habla local y la violencia que nadie nombra.",
+ o:[["Ramona y Ramiro",2017],["La naturaleza de la muerte",2019],["El espacio podría sonar así",2020],["Carnada",2024]],s:"Carnada."},
+{id:"silva",p:"UY",n:"Tamara Silva Bernaschina",c:"Silva",nac:2000,mue:null,e:"e5",g:["Narrativa"],y:2023,
+ r:"Narradora nacida en Minas, una de las voces más jóvenes de la narrativa uruguaya. Sus cuentos y novelas llevan el paisaje del interior, el calor, los animales y lo oculto a un territorio inquietante donde los secretos quedan sin resolver. Desastres naturales ganó dos premios Bartolomé Hidalgo y Temporada de ballenas el Premio Nacional de Literatura en ópera prima.",
+ o:[["Desastres naturales",2023],["Temporada de ballenas",2024],["Larvas",2025]],s:"Larvas, ocho relatos breves que inquietan."},
+{id:"trias",p:"UY",n:"Fernanda Trías",c:"Trías",nac:1976,mue:null,e:"e5",g:["Narrativa"],y:2020,
+ r:"Narradora y traductora montevideana radicada en Bogotá. Su prosa seca y de atmósfera enrarecida trabaja el encierro, la amenaza exterior y el cuerpo: en La azotea una mujer se atrinchera con su padre y su hija, y en Mugre rosa una ciudad costera cercada por una niebla tóxica pone a su narradora ante el cuidado y el aislamiento. Mugre rosa obtuvo el Premio Nacional de Literatura.",
+ o:[["La azotea",2001],["La ciudad invencible",2014],["No soñarás flores",2016],["Mugre rosa",2020],["El monte de las furias",2025]],s:"Mugre rosa."},
+{id:"bazterrica",p:"AR",n:"Agustina Bazterrica",c:"Bazterrica",nac:1974,mue:null,e:"e5",g:["Narrativa"],y:2017,
+ r:"Narradora y licenciada en Artes. Su ficción cruza el horror, la distopía y lo corporal: Cadáver exquisito, Premio Clarín de Novela, imagina un mundo donde un virus lleva a legalizar la cría de personas para el consumo. Fue traducida a decenas de idiomas.",
+ o:[["Matar a la niña",2013],["Antes del encuentro feroz",2016],["Cadáver exquisito",2017],["Las indignas",2023]],s:"Cadáver exquisito."},
+{id:"reyes",p:"AR",n:"Dolores Reyes",c:"Reyes",nac:1978,mue:null,e:"e5",g:["Narrativa"],y:2019,
+ r:"Narradora y filóloga clásica de Buenos Aires. Cometierra, su primera novela, sigue a una joven que come tierra y así ve dónde están las personas desaparecidas; su continuación, Miseria, la lleva a la ciudad. Trabaja la desaparición, el femicidio y la maternidad desde una voz entre lo visionario y lo cotidiano.",
+ o:[["Cometierra",2019],["Miseria",2023]],s:"Cometierra."},
 ];
 
 const CRUCES=[
