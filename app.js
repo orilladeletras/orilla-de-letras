@@ -386,7 +386,7 @@ const eraOf=id=>ERAS.find(e=>e.id===id);
 const paisN=id=>PAISES.find(p=>p.id===id).n;
 const norm=s=>s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'');
 const state={pais:null,era:null,gen:null,q:'',cur:null};
-const years=a=>a.nac+'–'+(a.mue||'');
+const years=a=>a.nac?a.nac+'–'+(a.mue||''):'s. XX–XXI';
 const GENS=[...new Set(A.flatMap(a=>a.g))];
 const cls=a=>a.p==='AR'?'ar':'uy';
 const ini=a=>a.n.split(' ').filter(w=>/^[A-ZÁÉÍÓÚ]/.test(w)).map(w=>w[0]).slice(0,2).join('');
@@ -448,7 +448,7 @@ function openA(id,noHash){
   const a=A.find(x=>x.id===id);if(!a)return;state.cur=id;lastFocus=document.activeElement;
   $('#p-era').textContent=eraOf(a.e).n;
   $('#p-tags').innerHTML=`<span class="tag ${cls(a)}">${paisN(a.p)}</span>`+a.g.map(g=>`<span class="tag">${g}</span>`).join('');
-  $('#p-name').textContent=a.n;$('#p-yrs').textContent=a.mue?`${a.nac} – ${a.mue}`:`n. ${a.nac}`;
+  $('#p-name').textContent=a.n;$('#p-yrs').textContent=a.mue?`${a.nac} – ${a.mue}`:(a.nac?`n. ${a.nac}`:'');
   $('#p-bio').textContent=a.r;
   $('#p-works').innerHTML=a.o.map(o=>{const q=encodeURIComponent(o[0]+' '+a.n);return `<li><div class="w"><em>${o[0]}</em><span>${o[1]}</span></div><div class="eds"><a class="ed" href="https://openlibrary.org/search?q=${q}" target="_blank" rel="noopener">Ver ediciones <b>↗</b></a><a class="ed" href="https://www.google.com/search?tbm=bks&q=${q}" target="_blank" rel="noopener">Google Libros <b>↗</b></a></div></li>`}).join('');
   $('#p-start').textContent=a.s;
