@@ -20,7 +20,7 @@
   +'.orb .slot{position:absolute;left:0;top:0;width:0;height:0;transform-style:preserve-3d;transform:rotateZ(var(--a)) translateY(calc(var(--r) * -1))}'
   +'.orb .oc{position:absolute;left:'+(-ANCHO/2)+'px;top:-75px;width:'+ANCHO+'px;height:150px;box-sizing:border-box;padding:12px 12px 10px 16px;text-align:left;cursor:pointer;overflow:hidden;color:#f4efe2;'
   +'font:inherit;border:1px solid color-mix(in srgb,var(--e,#9a6b2f) 55%,rgba(255,255,255,.18));border-left:4px solid var(--e,#9a6b2f);border-radius:14px;'
-  +'background:linear-gradient(150deg,rgba(14,30,52,.66),rgba(14,30,52,.38));box-shadow:0 14px 30px -14px rgba(0,0,0,.8);'
+  +'background:linear-gradient(150deg,color-mix(in srgb,var(--e,#9a6b2f) 42%,rgba(14,30,52,.72)),rgba(14,30,52,.36));box-shadow:0 14px 30px -14px rgba(0,0,0,.8);'
   +'transform:rotateZ(calc(var(--a) * -1)) rotateX(calc(var(--tilt) * -1));animation:orbContra var(--d,80s) linear infinite;transition:box-shadow .3s,border-color .3s,background .3s}'
   +'.orb .ring.inv,.orb .ring.inv .oc{animation-direction:reverse}'
   +'.orb .oc>*{position:relative;z-index:1}'
