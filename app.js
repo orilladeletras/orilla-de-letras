@@ -334,6 +334,15 @@ const A=[
 {id:"dobrinin",p:"UY",n:"Pablo Dobrinin",c:"Dobrinin",nac:null,mue:null,e:"e5",g:["Narrativa"],y:2011,
  r:"Narrador y ensayista uruguayo, formado en literatura y periodismo. Sus relatos, entre la ciencia ficción y lo fantástico, circulan en antologías y revistas de varios países y fueron traducidos al italiano, al francés, al catalán y al esloveno; escribió además sobre el carácter político de la ciencia ficción uruguaya.",
  o:[["Colores peligrosos",2011],["El mar aéreo",2016]],s:"Colores peligrosos."},
+{id:"arregui",p:"UY",n:"Mario Arregui",c:"Arregui",nac:1917,mue:1985,e:"e3",g:["Narrativa"],y:1960,
+ r:"Cuentista de Trinidad, Flores, de la Generación del 45. Sus relatos tienen un fondo rural de caballos, fogones y pueblos de provincia, pero la anécdota se carga de misterio y de una prosa limpia y grave; él mismo llamaba a su obra literatura a secas.",
+ o:[["Noche de San Juan",1956],["Hombres y caballos",1960],["La sed y el agua",1964],["El narrador",1972],["La escoba de la bruja",1979]],s:"Hombres y caballos."},
+{id:"pregogadea",p:"UY",n:"Omar Prego Gadea",c:"Prego Gadea",nac:1927,mue:2014,e:"e4",g:["Narrativa"],y:1996,
+ r:"Narrador y ensayista uruguayo, autor de un perfil de Juan Carlos Onetti y de un estudio sobre Ángel Rama. En Delmira reconstruyó los últimos días febriles de Delmira Agustini, en una novela que cruza la historia con la imaginación y que la crítica discute como novela histórica.",
+ o:[["Delmira",1996],["Igual que una sombra",1998]],s:"Delmira."},
+{id:"lago",p:"UY",n:"Sylvia Lago",c:"Lago",nac:1932,mue:null,e:"e4",g:["Narrativa"],y:1968,
+ r:"Narradora, docente y crítica montevideana, incluida entre los autores de la narrativa uruguaya imaginativa de los años sesenta. Sus novelas y cuentos trabajan el cuerpo, el erotismo y la condición femenina; también escribió sobre la literatura uruguaya insurrecta.",
+ o:[["Tan solos en el verano",1965],["La última razón",1968]],s:"La última razón."},
 ];
 
 const CRUCES=[
