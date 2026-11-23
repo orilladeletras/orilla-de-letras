@@ -28,7 +28,7 @@ function frame(now){
   if(target!==null){x+=(target-x)*.18}
   else{pos+=dir*.0009;if(pos>1){pos=1;dir=-1}if(pos<0){pos=0;dir=1}x+=(pos*W-x)*.08;tl.scrollLeft+=((x-tl.clientWidth/2)-tl.scrollLeft)*.05}
   ln.style.left=x+'px';
-  lab.textContent=Math.round(1800+x/W*220);
+  lab.textContent=Math.round(typeof yearAt==="function"?yearAt(x/W):1900+x/W*120);
   var ds=tl.querySelectorAll('.dot');
   for(var i=0;i<ds.length;i++){var d=ds[i];var dx=Math.abs(d.offsetLeft+d.offsetWidth/2-x);var n=Math.max(0,1-dx/70);d.style.setProperty('--n',n.toFixed(3))}
   if(vis&&!red)requestAnimationFrame(frame)

@@ -14,6 +14,7 @@
 <meta name="twitter:title" content="Narrativa Argentina y Uruguaya: autores, obras y lecturas críticas">
 <meta name="twitter:description" content="Narrativa argentina y uruguaya del siglo XX y XXI. Obras, críticas, ensayos y trabajos académicos sobre narradoras y narradores del Río de la Plata.">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0B2540">
 <title>Narrativa Argentina y Uruguaya: autores, obras y lecturas críticas</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -24,6 +25,7 @@
 <link rel="stylesheet" href="retratos.css?v=1">
 <link rel="stylesheet" href="futuro.css?v=1">
 <link rel="stylesheet" href="movil.css?v=1">
+<link rel="stylesheet" href="moderno.css?v=3">
 <style>
 .rio{-webkit-mask-image:linear-gradient(90deg,transparent,#000 14%,#000 86%,transparent),linear-gradient(180deg,transparent,#000 22%);-webkit-mask-composite:source-in;mask-image:linear-gradient(90deg,transparent,#000 14%,#000 86%,transparent),linear-gradient(180deg,transparent,#000 22%);mask-composite:intersect}
 canvas.rio{object-fit:cover;object-position:center}
@@ -64,7 +66,7 @@ canvas.rio{object-fit:cover;object-position:center}
 
   <main id="contenido">
   <section class="hero">
-    <h1>Narrativa <em>argentina y uruguaya</em></h1>
+    <h1>Narrativa <em><span class="ar">argentina</span> y <span class="uy">uruguaya</span></em></h1>
     <p id="intro">Del siglo XX y XXI. Obras, críticas, ensayos y trabajos académicos sobre narradoras y narradores del Río de la Plata.</p>
     <div class="hero-cta">
       <button class="btn" id="random" type="button"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 6.5C10 5 7 4.5 3.5 5v13c3.5-.5 6.5 0 8.5 1.5 2-1.5 5-2 8.5-1.5V5C17 4.5 14 5 12 6.5Z"/><path d="M12 6.5v13"/></svg>Lectura al azar</button>
@@ -74,7 +76,7 @@ canvas.rio{object-fit:cover;object-position:center}
 
     <div class="tl-wrap">
     <div class="tl-head"><h2>Línea de tiempo</h2>
-      <div class="legend"><span><i style="background:var(--accent)"></i>Uruguay</span><span><i style="background:var(--ar)"></i>Argentina</span><span>un punto por obra emblemática</span></div>
+      <div class="legend"><span><i style="background:var(--accent)"></i>Uruguay</span><span><i style="background:var(--ar)"></i>Argentina</span><span>un punto por obra emblemática · escala comprimida hasta 1926</span></div>
     </div>
     <div class="tl-scroll"><div class="tl" id="tl" role="group" aria-label="Línea de tiempo de obras emblemáticas"></div></div>
     </div>
@@ -132,16 +134,16 @@ canvas.rio{object-fit:cover;object-position:center}
   </div>
 </div>
 
-<script src="app.js?v=10"></script>
+<script src="app.js?v=12"></script>
 <script src="voces.js?v=6"></script>
 <script src="pintura.js?v=4"></script>
 <script src="mapa.js?v=8"></script>
 <script src="autos.js?v=3"></script>
 <script src="calido.js?v=1"></script>
-<script src="extra.js?v=12"></script>
+<script src="extra.js?v=14"></script>
 <script src="interaccion.js?v=1"></script>
 <script src="presenta.js?v=1"></script>
-<script src="nombre.js?v=3"></script>
+<script src="nombre.js?v=4"></script>
 <script src="colores.js?v=1"></script>
 <script src="remolino.js?v=11"></script>
 <script src="tarjetas.js?v=4"></script>
@@ -149,6 +151,7 @@ canvas.rio{object-fit:cover;object-position:center}
 <script src="tapas.js?v=4"></script>
 <script src="retratos.js?v=1"></script>
 <script src="tapas-tarjetas.js?v=1"></script>
+<script src="transicion.js?v=1"></script>
 <script>
 (function(){
   var m=document.getElementById('apoyo'),cp=document.getElementById('copiar');

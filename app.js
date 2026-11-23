@@ -313,13 +313,18 @@ function applyTheme(t){document.documentElement.setAttribute('data-theme',t);$('
  if(!t)t=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';applyTheme(t)})();
 $('#theme').onclick=()=>{const t=document.documentElement.getAttribute('data-theme')==='dark'?'light':'dark';applyTheme(t);try{localStorage.setItem('tema',t)}catch(e){}};
 
-const T0=1800,T1=2020,ROWS=8;
-const px=y=>((y-T0)/(T1-T0)*100);
+const T0=1900,T1=2025,ROWS=8;
+/* Escala comprimida hasta 1926: casi no hay autores antes y el tramo quedaba vacío */
+const COMP=1926,K=.4,RC=(COMP-T0)*K;
+const raw=y=>y<=COMP?(y-T0)*K:RC+(y-COMP);
+const RMAX=raw(T1);
+const px=y=>raw(y)/RMAX*100;
+const yearAt=f=>{const r=Math.max(0,Math.min(1,f))*RMAX;return r<=RC?T0+r/K:COMP+(r-RC)};
 function buildTL(){
   const tl=$('#tl');let h='';
-  ERAS.forEach(e=>{h+=`<div class="band" style="left:${px(e.a)}%;width:${px(e.b)-px(e.a)}%"><b>${e.n}</b></div>`});
-  for(let y=1800;y<=2000;y+=25)h+=`<span class="tick" style="left:${px(y)}%">${y}</span>`;
-  [...A].sort((a,b)=>a.y-b.y).forEach((a,i)=>{
+  ERAS.forEach(e=>{h+=`<div class="band" style="left:${px(Math.max(e.a,T0))}%;width:${px(Math.min(e.b,T1))-px(Math.max(e.a,T0))}%"><b>${e.n}</b></div>`});
+  for(let y=T0;y<=2020;y+=10)h+=`<span class="tick" style="left:${px(y)}%">${y}</span>`;
+  A.filter(a=>a.y>=T0).sort((a,b)=>a.y-b.y).forEach((a,i)=>{
     const top=62+(i%ROWS)*(180/ROWS)*1.12;
     h+=`<button class="dot ${a.p==='AR'?'ar':''}" data-id="${a.id}" style="left:${px(a.y)}%;top:${top}px" type="button"><i></i><span>${a.c}</span></button>`;
   });

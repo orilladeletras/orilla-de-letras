@@ -1,0 +1,179 @@
+/* moderno.css — última capa del sitio. Se carga después de todo lo demás.
+   Conserva la identidad (dos orillas: celeste = Uruguay, dorado = Argentina; óleo; fichas de papel;
+   tubo de autores; serif Instrument + mono DM) y ordena lo que se había ido acumulando:
+   un sistema de medidas, controles coherentes, foco visible, cabecera estable y elementos flotantes
+   sin pisarse. Los selectores llevan :root delante para ganar a las hojas que inyecta el JavaScript. */
+
+/* ---------- 1. Sistema: espaciado en múltiplos de 8, radios, movimiento, escala tipográfica ---------- */
+:root{
+  --s1:8px;--s2:16px;--s3:24px;--s4:32px;--s5:48px;--s6:64px;--s7:96px;
+  --r-sm:8px;--r-md:14px;--r-lg:22px;--r-pill:999px;
+  --t-fast:150ms;--t-base:220ms;--t-slow:300ms;--ease:cubic-bezier(.2,.8,.2,1);
+  --step--1:clamp(.75rem,.73rem + .1vw,.8125rem);
+  --step-0:1.0625rem;
+  --step-1:clamp(1.125rem,1.06rem + .3vw,1.375rem);
+  --step-4:clamp(2.25rem,1.5rem + 3.2vw,4rem);
+  --bar-h:72px;
+  --navy:#0B2540;--navy-glass:color-mix(in srgb,#0A2038 90%,transparent);
+}
+html{scroll-padding-top:calc(var(--bar-h) + var(--s2))}
+body{overflow-x:clip;text-rendering:optimizeLegibility}
+h1,h2,h3,.lead{text-wrap:balance}
+p,li{text-wrap:pretty}
+::selection{background:color-mix(in srgb,var(--accent) 35%,transparent)}
+
+/* ---------- 2. Foco visible y consistente ---------- */
+:root :focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:var(--r-sm)}
+:root :focus:not(:focus-visible){outline:none}
+
+/* ---------- 3. Cabecera: franja azul profunda a todo el ancho, siempre legible ---------- */
+:root .bar{
+  --ink:#F2F6FA;--muted:#B4C6D9;--line:#2C5176;--card:#102F4F;--accent:#7CC4F4;--on:#0B2540;
+  position:sticky;top:0;z-index:15;isolation:isolate;
+  min-height:var(--bar-h);padding-block:var(--s1);
+  background:none;border-bottom:0;backdrop-filter:none;-webkit-backdrop-filter:none;color:var(--ink)}
+:root .bar::before{content:"";position:absolute;inset:0 calc(50% - 50vw);z-index:-1;
+  background:var(--navy-glass);border-bottom:1px solid #1D4163;
+  backdrop-filter:saturate(160%) blur(16px);-webkit-backdrop-filter:saturate(160%) blur(16px)}
+:root .bar .brand{font-size:var(--step--1);letter-spacing:.14em;color:var(--muted)}
+.bar>span:last-child{align-items:center}
+
+/* ---------- 4. Controles: una sola familia (cápsula, mono en mayúsculas, 44 px, foco claro) ---------- */
+:root .pill:not(.gift):not(.ficha-pill),
+:root .chip,
+:root .btn:not(.ficha),
+:root .lnk{
+  clip-path:none!important;
+  border:1px solid color-mix(in srgb,var(--accent) 32%,var(--line))!important;
+  border-radius:var(--r-pill)!important;
+  background:color-mix(in srgb,var(--card) 88%,transparent);color:var(--ink);box-shadow:none;
+  font-family:var(--mono)!important;font-size:var(--step--1);font-weight:500;letter-spacing:.08em;text-transform:uppercase;
+  min-height:44px;padding:.6em 1.25em;display:inline-flex;align-items:center;justify-content:center;gap:var(--s1);
+  transition:background var(--t-base) var(--ease),border-color var(--t-base),color var(--t-base),transform var(--t-base) var(--ease),box-shadow var(--t-base)}
+:root .lnk{min-height:36px;padding:.35em 1em}
+:root .pill:not(.gift):not(.ficha-pill):hover,
+:root .chip:hover,
+:root .btn:not(.ficha):hover,
+:root .lnk:hover{
+  color:var(--accent);border-color:var(--accent)!important;transform:translateY(-1px);
+  box-shadow:0 8px 20px -12px color-mix(in srgb,var(--accent) 70%,transparent)}
+:root .pill:not(.gift):active,:root .chip:active,:root .btn:active,:root .lnk:active{transform:none}
+
+/* Filtros activos: relleno sólido con el color de la orilla */
+:root .chip[aria-pressed="true"]{background:var(--accent);color:var(--on);border-color:var(--accent)!important;box-shadow:none}
+:root .chip[aria-pressed="true"]::before{background:currentColor;box-shadow:none;width:6px;height:6px}
+
+/* Botón principal: relleno celeste, es la única acción llena de la portada */
+:root .hero .btn:not(.ficha):not(.ghost){background:var(--accent);color:var(--on);border-color:var(--accent)!important}
+:root .hero .btn:not(.ficha):not(.ghost):hover{background:color-mix(in srgb,var(--accent) 86%,#fff);color:var(--on)}
+
+/* Fichas de papel: se conserva el objeto (serif, papel, marco doble) y se le devuelve la tipografía */
+:root .btn.ficha,:root .pill.gift.ficha-pill{
+  clip-path:none!important;border:1px solid #b9a678!important;border-radius:3px!important;
+  font-family:"Instrument Serif",Georgia,serif!important;text-transform:none;letter-spacing:.02em;color:#2a1d0e}
+:root .btn.ficha{font-size:1.25rem;min-height:56px;padding:26px 28px 12px}
+:root .pill.gift.ficha-pill{font-size:1.125rem;min-height:44px;padding:8px 20px}
+:root .btn.ficha:hover,:root .pill.gift.ficha-pill:hover{color:#2a1d0e}
+
+/* ---------- 5. Portada ---------- */
+/* El resplandor del fondo ocupa todo el ancho de la pantalla (antes se cortaba en una caja central) */
+:root .hero{isolation:isolate;background:var(--hero)}
+:root .hero::before{content:"";position:absolute;inset:0 calc(50% - 50vw);z-index:-1;pointer-events:none;background:
+  radial-gradient(60% 55% at 78% 8%,color-mix(in srgb,#4FA6E8 38%,transparent),transparent 70%),
+  radial-gradient(45% 45% at 12% 4%,color-mix(in srgb,#F5B84B 22%,transparent),transparent 70%),
+  linear-gradient(180deg,#0A2038 0%,#0B2540 55%,#0A1D33 100%)}
+:root .hero{padding-top:clamp(56px,8vw,104px)}
+:root .hero h1{
+  font-size:clamp(2.75rem,1.6rem + 6.6vw,7.75rem);line-height:.96;letter-spacing:-.03em;
+  background:none;-webkit-background-clip:border-box;background-clip:border-box;color:#F6F9FC;-webkit-text-fill-color:currentColor}
+/* «argentina» en dorado y «uruguaya» en celeste: las dos orillas dentro del propio título */
+:root .hero h1 em{background:none;-webkit-background-clip:border-box;background-clip:border-box;-webkit-text-fill-color:currentColor;color:inherit}
+:root .hero h1 .ar{color:var(--ar)}
+:root .hero h1 .uy{color:var(--accent)}
+:root .hero #intro{font-size:var(--step-1);max-width:58ch;line-height:1.5;margin-top:var(--s3)}
+.hero-cta{gap:var(--s2);margin-top:var(--s3)}
+
+/* Autor del día: etiqueta pequeña y nombre como enlace serif */
+:root .hero .hoy{display:flex;flex-wrap:wrap;align-items:baseline;gap:var(--s1) var(--s2);margin:var(--s3) 0 0;font-size:var(--step-0)}
+:root .hero .hoy b{font:500 var(--step--1)/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+:root .hero .hoy button{
+  font:400 clamp(1.375rem,1.2rem + .8vw,1.75rem)/1.2 var(--display);letter-spacing:0;text-transform:none;
+  background:none;border:0;border-bottom:1px solid color-mix(in srgb,var(--accent) 60%,transparent);border-radius:0;
+  color:var(--ink);padding:2px 0;min-height:44px;transition:color var(--t-base),border-color var(--t-base)}
+:root .hero .hoy button:hover{color:var(--accent);border-color:var(--accent)}
+
+/* ---------- 6. Buscador flotante: dentro de la franja en escritorio, en la portada en móvil ---------- */
+:root #buscador input{
+  min-height:44px;border-radius:var(--r-pill);font-size:var(--step-0);padding:10px 18px;
+  background:color-mix(in srgb,#fff 10%,transparent);border:1px solid #2C5176;color:#F2F6FA;box-shadow:none;
+  transition:background var(--t-base),border-color var(--t-base),box-shadow var(--t-base)}
+:root #buscador input::placeholder{color:#B4C6D9;opacity:1}
+:root #buscador input:focus{background:color-mix(in srgb,#fff 16%,transparent);border-color:#7CC4F4;box-shadow:0 0 0 4px rgba(124,196,244,.25);outline:none}
+@media (min-width:720px){
+  :root #buscador{top:14px!important;right:calc((100vw - min(100vw,1180px))/2 + 20px + 348px);width:min(280px,28vw)}
+}
+@media (min-width:720px) and (max-width:1019px){:root .bar .brand{display:none}}
+@media (max-width:719px){
+  :root #buscador{position:absolute;top:calc(var(--bar-h) + var(--s1))!important;left:var(--s2);right:var(--s2);width:auto}
+}
+
+/* ---------- 7. Elementos flotantes: ya no se pisan ---------- */
+/* El contador vuelve al pie de página, donde corresponde */
+:root .visitas{position:static!important;margin:var(--s2) 0 0!important;padding:0;background:none;box-shadow:none;transform:none;opacity:.9}
+/* «De dónde» abajo a la izquierda, con el mismo lenguaje que el resto */
+:root .vlugb{left:var(--s2);bottom:var(--s2);min-height:40px;padding:8px 16px;border-radius:var(--r-pill);
+  font:500 var(--step--1)/1 var(--mono);letter-spacing:.04em;box-shadow:0 8px 20px -10px rgba(0,0,0,.5)}
+:root .vlug{left:var(--s2);bottom:calc(var(--s2) + 48px)}
+:root #arriba{right:var(--s2);bottom:var(--s2);width:48px;height:48px;border-radius:var(--r-pill);
+  transition:transform var(--t-base) var(--ease),background var(--t-base)}
+:root #arriba:hover{transform:translateY(-2px)}
+
+/* ---------- 8. Secciones, paneles y pie ---------- */
+:root .sec{padding-top:clamp(64px,9vw,112px)}
+:root .sec>h2{font-size:var(--step-4);letter-spacing:-.025em}
+:root .panel{overscroll-behavior:contain}
+:root .panel li,:root .card p,:root .cruz p{line-height:1.55}
+footer{padding-bottom:calc(var(--s7) + var(--s2))}
+footer .creditos-link{margin-top:var(--s2)}
+#chapas,footer{content-visibility:auto;contain-intrinsic-size:auto 640px}
+
+/* La línea de tiempo respira un poco más ahora que la escala es más densa */
+:root .tl{min-width:1760px}
+
+/* ---------- 9. Revelado suave al desplazarse (solo donde el navegador lo soporta) ---------- */
+@supports (animation-timeline:view()){
+  @media (prefers-reduced-motion:no-preference){
+    :root .sec>h2,:root .cruz,:root #chapas .autos{
+      animation:rev linear both;animation-timeline:view();animation-range:entry 0% entry 35%}
+    @keyframes rev{from{opacity:0;transform:translateY(var(--s3))}to{opacity:1;transform:none}}
+  }
+}
+
+/* ---------- 9b. La tarjeta se expande en la ficha del autor (ver transicion.js) ---------- */
+::view-transition-group(root){animation:none}
+::view-transition-old(root),::view-transition-new(root){animation:none;mix-blend-mode:normal}
+::view-transition-group(autor){animation-duration:var(--t-slow);animation-timing-function:var(--ease);z-index:70}
+::view-transition-old(autor){animation-duration:var(--t-base)}
+::view-transition-new(autor){animation-duration:var(--t-slow)}
+
+/* ---------- 10. Preferencias del sistema ---------- */
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+}
+@media (forced-colors:active){
+  :root .pill,:root .chip,:root .btn,:root .lnk{border:1px solid ButtonText!important}
+}
+@media print{
+  .bar,#buscador,#mapa,.vlugb,#arriba,#lecbar,.veil{display:none!important}
+  body{background:#fff;color:#000}
+}
+
+/* ---------- 11. Móvil estrecho ---------- */
+@media (max-width:719px){
+  :root{--bar-h:64px}
+  :root .bar .pill{min-height:44px}
+  :root .hero{padding-top:72px}
+  :root .hero h1{font-size:clamp(2.5rem,12vw,3.25rem)}
+  :root .btn.ficha{width:100%}
+  :root .hero-cta .btn{flex:1 1 100%}
+}

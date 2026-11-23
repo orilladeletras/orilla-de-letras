@@ -4,7 +4,7 @@
   var DESC='Narrativa argentina y uruguaya del siglo XX y XXI. Obras, críticas, ensayos y trabajos académicos sobre narradoras y narradores del Río de la Plata.';
   var INTRO='Del siglo XX y XXI. Obras, críticas, ensayos y trabajos académicos sobre narradoras y narradores del Río de la Plata.';
   var i=document.getElementById('intro');if(i)i.textContent=INTRO;
-  var h=document.querySelector('.hero h1');if(h)h.innerHTML='Narrativa <em>argentina y uruguaya</em>';
+  var h=document.querySelector('.hero h1');if(h)h.innerHTML='Narrativa <em><span class="ar">argentina</span> y <span class="uy">uruguaya</span></em>';
   var b=document.querySelector('.bar .brand');if(b)b.textContent='Narrativa Argentina y Uruguaya';
   /* la categoría Poesía sale de los filtros y de las etiquetas de las tarjetas */
   function limpia(){
