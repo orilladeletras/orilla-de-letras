@@ -235,3 +235,18 @@ footer .creditos-link{margin-top:var(--s2)}
   :root .hero h1{font-size:clamp(3rem,15vw,4.25rem);max-width:none}
   :root .bar .brand{font-size:1.25rem}
 }
+
+/* ---------- 12. Pasada Vercel + UI/UX Pro Max (26/11/2026) ---------- */
+html{-webkit-tap-highlight-color:rgba(124,196,244,.25)}
+:root a,:root button,:root .chip,:root .card,:root .pill,:root input{touch-action:manipulation}
+:root .count,:root .yrs,:root #p-yrs,:root .tl{font-variant-numeric:tabular-nums}
+:root .bar-acc{display:flex;gap:var(--s1)}
+:root .legend i.dot-uy{background:var(--accent)}
+:root .legend i.dot-ar{background:var(--ar)}
+:root #p-yrs{font-family:var(--mono);font-size:.8125rem;color:var(--muted)}
+:root #p-bio{margin-top:var(--s2)}
+:root #contenido:focus{outline:0}
+:root .apoyo,:root .apoyo .box{overscroll-behavior:contain}
+@media (prefers-reduced-motion:reduce){
+  :root *,:root *::before,:root *::after{transition-duration:.01ms!important;animation-duration:.01ms!important;animation-iteration-count:1!important}
+}
