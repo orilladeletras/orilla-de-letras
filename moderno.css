@@ -140,14 +140,7 @@ footer .creditos-link{margin-top:var(--s2)}
 /* La línea de tiempo respira un poco más ahora que la escala es más densa */
 :root .tl{min-width:1760px}
 
-/* ---------- 9. Revelado suave al desplazarse (solo donde el navegador lo soporta) ---------- */
-@supports (animation-timeline:view()){
-  @media (prefers-reduced-motion:no-preference){
-    :root .sec>h2,:root .cruz,:root #chapas .autos{
-      animation:rev linear both;animation-timeline:view();animation-range:entry 0% entry 35%}
-    @keyframes rev{from{opacity:0;transform:translateY(var(--s3))}to{opacity:1;transform:none}}
-  }
-}
+/* ---------- 9. Sin revelados al desplazarse: las secciones están visibles desde el primer momento ---------- */
 
 /* ---------- 9b. La tarjeta se expande en la ficha del autor (ver transicion.js) ---------- */
 ::view-transition-group(root){animation:none}
@@ -177,33 +170,3 @@ footer .creditos-link{margin-top:var(--s2)}
   :root .btn.ficha{width:100%}
   :root .hero-cta .btn{flex:1 1 100%}
 }
-
-/* ---------- 10. Pasada impeccable (25/11/2026) ---------- */
-/* Botón de cierre del mapa de conexiones: antes era un círculo blanco suelto sobre la pintura */
-:root #mcer{
-  left:var(--s2);top:var(--s1);width:44px;height:44px;display:grid;place-items:center;
-  background:var(--navy-glass);color:#F2F6FA;border:1px solid #2C5176;font-size:1.5rem;line-height:1;
-  -webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);
-  transition:background var(--t-base),border-color var(--t-base),color var(--t-base)}
-:root #mcer:hover{border-color:#7CC4F4;color:#7CC4F4}
-
-/* «Autores» sobre el ocaso pintado: sombra suave para que el título sea legible sobre amarillos y rojos */
-:root .sec.cal>h2{color:#fff;text-shadow:0 1px 2px rgba(30,8,0,.65),0 6px 32px rgba(30,8,0,.55)}
-
-/* Leyenda de la línea de tiempo: puede partirse en líneas sin pisar el título */
-:root .legend{flex-wrap:wrap;gap:var(--s1) var(--s2);line-height:1.5}
-
-/* Llamadas a la acción de la portada: en móvil ocupan el mismo ancho y se alinean */
-@media (max-width:519px){
-  :root .hero-cta{display:grid;grid-template-columns:1fr;justify-items:stretch}
-  :root .hero-cta .btn{width:100%}
-}
-
-/* El tubo gira sin parar: con movimiento reducido las filas quedan quietas (la ficha sigue abriéndose al tocar) */
-@media (prefers-reduced-motion:reduce){
-  :root .orb .ring{animation:none!important}
-  html{scroll-behavior:auto}
-}
-
-/* Buscador: el rótulo largo ya no se corta en pantallas angostas */
-:root .search,:root #q{text-overflow:ellipsis}
