@@ -10,7 +10,7 @@
 
   window.openA=function(id,noHash){
     var origen=document.querySelector('.oc.sel');
-    if(activa||reduce.matches||!origen||panel.classList.contains('open'))return previa(id,noHash);
+    if(window.__sinVT||activa||reduce.matches||!origen||panel.classList.contains('open'))return previa(id,noHash);
     activa=true;
     origen.style.viewTransitionName='autor';
     var espera=panel.style.transition;
