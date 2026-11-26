@@ -374,13 +374,14 @@ function openA(id,noHash){
   $('#p-works').innerHTML=a.o.map(o=>{const q=encodeURIComponent(o[0]+' '+a.n);return `<li><div class="w"><em>${o[0]}</em><span>${o[1]}</span></div><div class="eds"><a class="ed" href="https://openlibrary.org/search?q=${q}" target="_blank" rel="noopener">Ver ediciones <b>↗</b></a><a class="ed" href="https://www.google.com/search?tbm=bks&q=${q}" target="_blank" rel="noopener">Google Libros <b>↗</b></a></div></li>`}).join('');
   $('#p-start').textContent=a.s;
   const cr=CRUCES.filter(c=>c.ids.includes(id));
-  $('#p-cruces').innerHTML=cr.length?'<h4>Cruces del Plata</h4>'+cr.map(c=>`<div class="px"><b>${c.t}</b><span>${c.x}</span></div>`).join(''):'';
+  $('#p-cruces').innerHTML=cr.length?'<h4 role="heading" aria-level="3">Cruces del Plata</h4>'+cr.map(c=>`<div class="px"><b>${c.t}</b><span>${c.x}</span></div>`).join(''):'';
   document.querySelectorAll('.dot').forEach(d=>d.classList.toggle('on',d.dataset.id===id));
   $('#panel').classList.add('open');$('#panel').setAttribute('aria-hidden','false');$('#veil').classList.add('open');
-  $('#panel').scrollTop=0;$('#close').focus();
+  $('#panel').scrollTop=0;document.querySelector('.wrap').inert=true;setTimeout(()=>$('#close').focus(),340);
   if(!noHash){try{history.replaceState(null,'','#'+id)}catch(e){location.hash=id}}
 }
 function closeA(){
+  document.querySelector('.wrap').inert=false;
   $('#panel').classList.remove('open');$('#panel').setAttribute('aria-hidden','true');$('#veil').classList.remove('open');
   document.querySelectorAll('.dot').forEach(d=>d.classList.remove('on'));state.cur=null;
   try{history.replaceState(null,'',location.pathname+location.search)}catch(e){}
