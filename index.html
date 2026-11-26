@@ -63,6 +63,7 @@ canvas.rio{object-fit:cover;object-position:center}
 <div class="wrap">
   <header class="bar">
     <span class="brand" translate="no">Narrativa Argentina y Uruguaya</span>
+    <nav class="bar-nav" aria-label="Secciones"><a href="#tiempo">Tiempo</a><a href="#autores">Autores</a><a href="#chapas">Matriculados</a></nav>
     <span class="bar-acc"><button class="pill gift ficha-pill" id="apoyar" type="button">Apoyar el proyecto</button><button class="pill" id="theme" type="button">Tema</button></span>
   </header>
 
@@ -76,7 +77,7 @@ canvas.rio{object-fit:cover;object-position:center}
     </div>
     <canvas class="rio" id="rio" role="img" aria-label="Pintura al óleo: dos orillas de un río bajo la luna, con un puerto viejo, un velero y libros abiertos que cruzan volando" width="1600" height="460"></canvas>
 
-    <div class="tl-wrap">
+    <div class="tl-wrap" id="tiempo">
     <div class="tl-head"><h2>Línea de tiempo</h2>
       <div class="legend"><span><i class="dot-uy"></i>Uruguay</span><span><i class="dot-ar"></i>Argentina</span><span>un punto por obra emblemática · escala comprimida hasta 1926</span></div>
     </div>
@@ -155,7 +156,9 @@ canvas.rio{object-fit:cover;object-position:center}
 <script src="tapas.js?v=4"></script>
 <script src="retratos.js?v=1"></script>
 <script src="tapas-tarjetas.js?v=1"></script>
-<script src="transicion.js?v=1"></script>
+<script src="transicion.js?v=2"></script>
+<script src="cuarto.js?v=4"></script>
+<script src="conexion.js?v=1"></script>
 <script>
 (function(){
   var m=document.getElementById('apoyo'),cp=document.getElementById('copiar');
