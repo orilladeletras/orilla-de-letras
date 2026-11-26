@@ -96,7 +96,6 @@
         var slot=document.createElement('div');slot.className='slot';
         slot.style.setProperty('--a',ang.toFixed(2)+'deg');slot.style.setProperty('--r',radio.toFixed(1)+'px');
         var f=document.createElement('button');f.type='button';f.className='oc';f.dataset.id=id;
-        f.setAttribute('aria-label','Abrir la ficha de '+(a?a.n:id));
         var e=getComputedStyle(c).getPropertyValue('--e').trim();if(e)f.style.setProperty('--e',e);
         var yr=c.querySelector('.yrs'),h3=c.querySelector('h3');
         f.dataset.ini=(c.querySelector('.mono')||{}).textContent||'';
