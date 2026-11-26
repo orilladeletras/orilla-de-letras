@@ -250,3 +250,23 @@ html{-webkit-tap-highlight-color:rgba(124,196,244,.25)}
 @media (prefers-reduced-motion:reduce){
   :root *,:root *::before,:root *::after{transition-duration:.01ms!important;animation-duration:.01ms!important;animation-iteration-count:1!important}
 }
+
+/* ---------- 13. Superficies modernas (26/11/2026): fuera el papel en la cabecera y la portada ----------
+   Las dos «fichas» de papel con marco doble desentonaban con el resto: ahora son vidrio sobre el azul,
+   una con el dorado de Argentina como contorno y la otra en blanco translúcido. El papel queda para las tarjetas de autor. */
+:root .btn.ficha::before,:root .btn.ficha::after,:root .pill.gift.ficha-pill::before,:root .pill.gift.ficha-pill::after{content:none!important;display:none!important}
+:root .btn.ficha,:root .pill.gift.ficha-pill{
+  background:rgba(255,255,255,.07)!important;background-image:none!important;color:#F2F6FA;
+  border:1px solid rgba(255,255,255,.26)!important;box-shadow:none!important;
+  backdrop-filter:blur(14px) saturate(140%);-webkit-backdrop-filter:blur(14px) saturate(140%);
+  font-family:var(--body)!important;font-weight:600;letter-spacing:0;
+  transition:background var(--t-base) var(--ease),border-color var(--t-base),color var(--t-base),transform var(--t-base) var(--ease)}
+:root .btn.ficha{font-size:1.0625rem;min-height:56px;padding:0 var(--s4);border-radius:var(--r-md)!important}
+:root .pill.gift.ficha-pill{font-size:.9375rem;min-height:44px;padding:0 var(--s3);border-radius:var(--r-pill)!important;color:#F5B84B;border-color:rgba(245,184,75,.55)!important}
+:root .btn.ficha:hover,:root .pill.gift.ficha-pill:hover{background:rgba(255,255,255,.14)!important;border-color:rgba(255,255,255,.5)!important;color:#fff;transform:translateY(-1px)}
+:root .pill.gift.ficha-pill:hover{color:#FFD27F;border-color:#F5B84B!important}
+:root .btn.ficha:active,:root .pill.gift.ficha-pill:active{transform:none}
+:root .hero .btn:not(.ficha):not(.ghost){box-shadow:0 14px 32px -16px color-mix(in srgb,var(--ar) 80%,transparent)}
+@media (prefers-reduced-motion:no-preference){
+  :root .hero .btn:not(.ficha):not(.ghost):hover{transform:translateY(-2px)}
+}
