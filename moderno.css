@@ -200,3 +200,38 @@ footer .creditos-link{margin-top:var(--s2)}
 
 /* Buscador: el rótulo largo ya no se corta en pantallas angostas */
 :root .search,:root #q{text-overflow:ellipsis}
+
+/* ---------- 11. Rediseño (26/11/2026): misma identidad, otra jerarquía ----------
+   Dos orillas = dos colores (dorado Argentina, celeste Uruguay). La portada se compone alrededor del título:
+   marca en serif, título apilado con filete bicolor, bajada en serif de lectura y botones en minúscula. */
+
+/* Marca: de rótulo en mayúsculas con tracking a firma en serif */
+:root .bar .brand{font-family:var(--display);font-size:1.5rem;letter-spacing:-.005em;text-transform:none;color:#F2F6FA;line-height:1}
+
+/* Portada: más aire arriba y título en dos líneas con un filete que une los dos países */
+:root .hero{padding-top:clamp(56px,7vw,104px)}
+:root .hero h1{font-size:clamp(3.25rem,1.6rem + 6.8vw,8rem);line-height:.92;letter-spacing:-.035em;max-width:none}
+:root .hero h1 em{display:block;font-style:italic;letter-spacing:-.03em}
+:root .hero h1::after{content:"";display:block;width:clamp(120px,16vw,240px);height:6px;margin-top:clamp(20px,2.4vw,32px);
+  background:linear-gradient(90deg,var(--ar) 0 50%,var(--accent) 50% 100%);border-radius:0}
+:root .hero #intro{font-size:clamp(1.25rem,1.05rem + .8vw,1.5rem);line-height:1.5;max-width:42ch;margin-top:var(--s3);color:#D3E0EC}
+
+/* Botones de la portada: una acción principal y otra secundaria, en minúscula y con más cuerpo */
+:root .hero-cta{margin-top:var(--s4);gap:var(--s2)}
+:root .hero .btn:not(.ficha){font-family:var(--body)!important;font-size:1.0625rem;font-weight:600;letter-spacing:0;text-transform:none;
+  min-height:56px;padding-inline:var(--s4);border-radius:var(--r-md)!important}
+:root .hero .btn:not(.ficha):not(.ghost){background:var(--ar);border-color:var(--ar)!important;color:#1B1204}
+:root .hero .btn:not(.ficha):not(.ghost):hover{background:color-mix(in srgb,var(--ar) 88%,#fff);color:#1B1204}
+
+/* Autores: título de portada de sección y buscador protagonista */
+:root .sec>h2{font-size:clamp(3rem,1.8rem + 6vw,7rem);line-height:.92;letter-spacing:-.035em}
+:root .search{max-width:640px;min-height:60px;padding:var(--s2) var(--s3);font-size:1.125rem;border-radius:var(--r-md)}
+:root .count{font-family:var(--serif,Newsreader,Georgia,serif);font-size:1rem;letter-spacing:0;text-transform:none}
+
+/* Línea de tiempo: título al mismo nivel que los demás */
+:root .tl-head h2{font-size:clamp(2rem,1.4rem + 2.4vw,3.25rem);letter-spacing:-.03em}
+
+@media (max-width:519px){
+  :root .hero h1{font-size:clamp(3rem,15vw,4.25rem);max-width:none}
+  :root .bar .brand{font-size:1.25rem}
+}
