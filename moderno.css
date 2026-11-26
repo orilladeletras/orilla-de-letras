@@ -290,3 +290,18 @@ html{-webkit-tap-highlight-color:rgba(124,196,244,.25)}
   box-shadow:0 0 0 2px rgba(255,255,255,.85),0 28px 48px -20px color-mix(in srgb,var(--e,#9a6b2f) 90%,#000)}
 :root .orb .oc:focus-visible{outline:2px solid var(--accent);outline-offset:4px}
 :root .orb .oc.sel{box-shadow:0 0 0 3px #fff,0 0 40px 4px color-mix(in srgb,var(--e,#9a6b2f) 70%,transparent)}
+
+/* ---------- 15. Movimiento del tubo (26/11/2026): lo mueve tubo.js ---------- */
+:root .orb{touch-action:pan-y;cursor:grab;-webkit-user-select:none;user-select:none}
+:root .orb.arrastra{cursor:grabbing}
+:root .orb.arrastra .oc{pointer-events:none}
+:root .orb .ring{animation:none!important;will-change:rotate}
+:root .orb .oc{-webkit-tap-highlight-color:transparent;backface-visibility:hidden;-webkit-font-smoothing:antialiased}
+
+/* ---------- 16. Efectos de estudio (26/11/2026): los mueve efectos.js ---------- */
+:root .fx-pal{display:inline-block;overflow:hidden;vertical-align:bottom;padding:.1em .04em .24em;margin:-.1em -.04em -.24em}
+:root .fx-let{display:inline-block;will-change:transform}
+.fx-cursor{position:fixed;left:0;top:0;z-index:9999;width:36px;height:36px;border:1.5px solid #fff;border-radius:50%;
+  mix-blend-mode:difference;pointer-events:none;opacity:0;transition:opacity var(--t-base),background var(--t-base)}
+.fx-cursor.on{opacity:1}
+.fx-cursor.sobre{background:#fff}
